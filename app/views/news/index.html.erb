@@ -2,7 +2,5 @@
 <% provide(:blog_active, "active") %>
 
 <div class="row">
-  <% @news.each do |newsitem| %>
-    <%= render newsitem %>
-  <% end %>
+  <%= render @news %>
 </div>

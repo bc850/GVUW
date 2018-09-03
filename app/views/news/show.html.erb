@@ -1,27 +1,10 @@
 <% provide(:page_title, @news.title) %>
 <% provide(:blog_active, "active") %>
 
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @news.title %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= @news.body %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @news.description %>
-</p>
-
-<p>
-  <strong>Slug:</strong>
-  <%= @news.slug %>
-</p>
-
-<%= link_to 'Edit', edit_news_path(@news) %> |
-<%= link_to 'Back', news_index_path %>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 text-xs-center">
+    <h1><%= @news.title %></h1>
+    <p>September 3, 2018</p>
+    <%= @news.body %>
+  </div>
+</div>
