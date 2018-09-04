@@ -2,6 +2,10 @@
 <% provide(:blog_active, "active") %>
 
 <div class="row">
+  <div>
+    <%= link_to 'New', new_author_news_path, class: 'btn btn-primary' %>
+  </div>
+  <br>
   <table class="table table-striped">
     <tr>
       <th colspan="4">Title</th>
