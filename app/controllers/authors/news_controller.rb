@@ -1,4 +1,4 @@
-module Author
+module Authors
   class NewsController < AuthorController
     before_action :set_news, only: [:show, :edit, :update, :destroy]
 

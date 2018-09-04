@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :authors
-  namespace :author do
+  namespace :authors do
     resources :news
   end
 
