@@ -4,7 +4,7 @@
     </div>
     <div class="card-block">
       <h4 class="card-title"><%= link_to news.title, news %></h4>
-      <p class="published-date">Published September 3, 2018</p>
+      <p class="published-date"><%= news.display_day_published %></p>
       <p class="card-text"><%= truncate(news.description, length: 130) %></p>
       <%= link_to 'Read', news, class: 'btn btn-primary' %>
     </div>

@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
-  get 'about' => 'pages#about', as: :about
-  get 'contact' => 'pages#contact', as: :contact
+  namespace :author do
+    resources :news
+  end
 
-  resources :news
-  root to: "news#index"
+  scope module: 'home' do
+    get 'about' => 'pages#about', as: :about
+    get 'contact' => 'pages#contact', as: :contact
+    get 'news' => 'news#index', as: :news_index
+    get 'news/:id' => 'news#show', as: :news
+  end
+  root to: "home/news#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

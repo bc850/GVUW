@@ -8,4 +8,8 @@ class News < ApplicationRecord
     # if you update the title, you want ot update the slug as well
     title_changed?
   end
+
+  def display_day_published
+    "Published #{created_at.strftime('%-b %-d, %Y')}"
+  end
 end
