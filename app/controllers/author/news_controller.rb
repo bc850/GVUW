@@ -1,5 +1,5 @@
 module Author
-  class NewsController < HomeController
+  class NewsController < AuthorController
     before_action :set_news, only: [:show, :edit, :update, :destroy]
 
     # GET /news
