@@ -5,7 +5,7 @@ module Authors
     # GET /news
     # GET /news.json
     def index
-      @news = News.most_recent
+      @news = current_author.news.most_recent
     end
 
     # GET /news/1
@@ -15,7 +15,7 @@ module Authors
 
     # GET /news/new
     def new
-      @news = News.new
+      @news = current_author.news.new
     end
 
     # GET /news/1/edit
@@ -25,7 +25,7 @@ module Authors
     # POST /news
     # POST /news.json
     def create
-      @news = News.new(news_params)
+      @news = current_author.news.new(news_params)
 
       respond_to do |format|
         if @news.save
@@ -57,7 +57,7 @@ module Authors
     def destroy
       @news.destroy
       respond_to do |format|
-        format.html { redirect_to author_news_index_url, notice: 'News post was successfully destroyed.' }
+        format.html { redirect_to authors_news_path(@news), notice: 'News post was successfully destroyed.' }
         format.json { head :no_content }
       end
     end
@@ -65,12 +65,12 @@ module Authors
     private
       # Use callbacks to share common setup or constraints between actions.
       def set_news
-        @news = News.friendly.find(params[:id])
+        @news = current_author.news.friendly.find(params[:id])
       end
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def news_params
-        params.require(:news).permit(:title, :body, :description, :banner_image_url)
+        params.require(:news).permit(:title, :body, :description, :banner_image_url, :author_id)
       end
   end
 end
