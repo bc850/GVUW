@@ -29,7 +29,7 @@ module Authors
 
       respond_to do |format|
         if @news.save
-          format.html { redirect_to author_news_path(@news), notice: 'News post was successfully created.' }
+          format.html { redirect_to authors_news_path(@news), notice: 'News post was successfully created.' }
           format.json { render :show, status: :created, location: @news }
         else
           format.html { render :new }
@@ -43,7 +43,7 @@ module Authors
     def update
       respond_to do |format|
         if @news.update(news_params)
-          format.html { redirect_to author_news_path(@news), notice: 'News post was successfully updated.' }
+          format.html { redirect_to authors_news_path(@news), notice: 'News post was successfully updated.' }
           format.json { render :show, status: :ok, location: @news }
         else
           format.html { render :edit }
