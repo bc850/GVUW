@@ -4,6 +4,8 @@ class News < ApplicationRecord
 
   scope :most_recent, -> { order(id: :desc) }
 
+  belongs_to :author
+
   def should_generate_new_friendly_id?
     # if you update the title, you want ot update the slug as well
     title_changed?
