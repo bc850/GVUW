@@ -2,5 +2,10 @@
 <% provide(:blog_active, "active") %>
 
 <div class="row">
-  <%= render @news %>
+  <table class="table table-striped">
+    <tr>
+      <th>Title</th>
+    </tr>
+    <%= render @news %>
+  </table>
 </div>
