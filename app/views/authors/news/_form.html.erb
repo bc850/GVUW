@@ -15,7 +15,14 @@
     <div class="col-md-4">
       <div class="card" style="width: 20rem;">
         <div class="card-block">
-          <h4 class="card-title"><%= yield(:page_title) %></h4>
+          <% if @news.new_record? %>
+            <h4 class="card-title">New News Post</h4>
+          <% else %>
+            <h4 class="card-title">
+              <b>Edit</b>
+              <span class="thin-text"><%= @news.title %></span>
+            </h4>
+          <% end %>
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">
@@ -33,12 +40,12 @@
           <li class="list-group-item">
             <div class="field">
               <%= form.label :description %>
-              <%= form.text_field :description, class: 'form-control' %>
+              <%= form.text_area :description, class: 'form-control' %>
             </div>
           </li>
           <li class="list-group-item">
             <div class="actions">
-              <%= form.submit %>
+              <%= form.submit "Save News Post", class: "btn btn-success btn-block" %>
             </div>
           </li>
         </ul>

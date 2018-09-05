@@ -1,4 +1,5 @@
 $light-gray: #d3d3d3;
+$white: #fff;
 
 .news.index {
   .card {
@@ -50,7 +51,7 @@ $light-gray: #d3d3d3;
 .news.edit, .news.new {
   .card {
     .card-block {
-      background-color: $light-gray;
+      background-color: $white;
     }
     .card-title {
       margin-bottom: 0;
@@ -62,13 +63,13 @@ $light-gray: #d3d3d3;
       border-right: 0;
       input[type='text'], textarea {
         font-size: 14px;
-        background-color: $light-gray;
+        background-color: $white;
       }
       textarea {
         height: 100px;
       }
       &:last-child {
-        background-color: $light-gray;
+        background-color: $white;
       }
     }
   }
@@ -92,6 +93,20 @@ $light-gray: #d3d3d3;
     h6 {
       font-weight: 300;
       font-size: 16px
+    }
+  }
+}
+
+.news.edit, .news.new {
+  .card {
+    .card-title {
+      font-size: 16px;
+    }
+    .list-group-item {
+      padding: 10px;
+      input[type="text"], textarea {
+        font-size: 11px;
+      }
     }
   }
 }
