@@ -1,0 +1,9 @@
+<% provide(:page_title, "All News Posts") %>
+<% provide(:blog_active, "active") %>
+
+<div class="row">
+  <%= render @news %>
+</div>
+<div class="apple_pagination">
+  <%= will_paginate @news, container: false %>
+</div>

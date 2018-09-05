@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_01_224948) do
+ActiveRecord::Schema.define(version: 2018_09_05_134613) do
+
+  create_table "authors", force: :cascade do |t|
+    t.string "name"
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_authors_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_authors_on_reset_password_token", unique: true
+  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -24,14 +42,19 @@ ActiveRecord::Schema.define(version: 2018_09_01_224948) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
   end
 
-  create_table "posts", force: :cascade do |t|
+  create_table "news", force: :cascade do |t|
     t.string "title"
     t.text "body"
-    t.text "description"
+    t.string "description"
     t.string "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["slug"], name: "index_posts_on_slug", unique: true
+    t.string "banner_image_url"
+    t.integer "author_id"
+    t.boolean "published", default: false
+    t.datetime "published_at"
+    t.index ["author_id"], name: "index_news_on_author_id"
+    t.index ["slug"], name: "index_news_on_slug", unique: true
   end
 
 end

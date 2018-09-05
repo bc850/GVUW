@@ -1,0 +1,15 @@
+<% provide(:page_title, "All News Posts") %>
+<% provide(:blog_active, "active") %>
+
+<div class="row">
+  <div>
+    <%= link_to 'New', new_authors_news_path, class: 'btn btn-primary' %>
+  </div>
+  <br>
+  <table class="table table-striped">
+    <tr>
+      <th colspan="5">Title</th>
+    </tr>
+    <%= render @news %>
+  </table>
+</div>

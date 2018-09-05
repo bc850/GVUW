@@ -1,0 +1,10 @@
+<% provide(:page_title, @news.title) %>
+<% provide(:blog_active, "active") %>
+
+<div class="row">
+  <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 text-xs-center">
+    <h1><%= @news.title %></h1>
+    <p><%= @news.display_day_published %></p>
+    <%= @news.body.html_safe %>
+  </div>
+</div>

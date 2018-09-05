@@ -1,0 +1,12 @@
+<% provide(:page_title, @news.title) %>
+<% provide(:author, "active") %>
+
+<div class="row">
+  <%= link_to 'Edit', edit_authors_news_path(@news), class: 'btn btn-sm btn-warning' %>
+  <%= link_to 'Remove', authors_news_path(@news), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
+  <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 text-xs-center">
+    <h1><%= @news.title %></h1>
+    <p><%= @news.display_day_published %></p>
+    <%= @news.body.html_safe %>
+  </div>
+</div>
