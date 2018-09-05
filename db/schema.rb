@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_04_201608) do
+ActiveRecord::Schema.define(version: 2018_09_05_134613) do
 
   create_table "authors", force: :cascade do |t|
     t.string "name"
@@ -51,6 +51,8 @@ ActiveRecord::Schema.define(version: 2018_09_04_201608) do
     t.datetime "updated_at", null: false
     t.string "banner_image_url"
     t.integer "author_id"
+    t.boolean "published", default: false
+    t.datetime "published_at"
     t.index ["author_id"], name: "index_news_on_author_id"
     t.index ["slug"], name: "index_news_on_slug", unique: true
   end
