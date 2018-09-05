@@ -20,5 +20,9 @@
 
 document.addEventListener("turbolinks:load", function() {
   tinymce.remove();
-  tinymce.init({ selector:'textarea#news_body' });
+  tinymce.init({
+    selector: 'textarea#news_body',
+    plugins: 'image media link code',
+    toolbar: 'undo redo | styleselect | bold italic link | image media | code',
+   });
 })
