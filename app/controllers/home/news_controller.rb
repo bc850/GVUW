@@ -3,7 +3,7 @@ module Home
     # GET /news
     # GET /news.json
     def index
-      @news = News.most_recent
+      @news = News.most_recent.published
     end
 
     # GET /news/1

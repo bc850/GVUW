@@ -1,8 +1,26 @@
+# == Schema Information
+#
+# Table name: news
+#
+#  id               :integer          not null, primary key
+#  title            :string
+#  body             :text
+#  description      :string
+#  slug             :string
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  banner_image_url :string
+#  author_id        :integer
+#  published        :boolean          default(FALSE)
+#  published_at     :datetime
+#
+
 class News < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
 
   scope :most_recent, -> { order(id: :desc) }
+  scope :published, -> { where(published: true) }
 
   belongs_to :author#, :optional => true
 
