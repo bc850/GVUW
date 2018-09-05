@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   devise_for :authors
   namespace :authors do
-    resources :news
+    resources :news do
+      put 'publish' => 'news#publish'
+      put 'unpublish' => 'news#unpublish'
+    end
   end
 
   scope module: 'home' do

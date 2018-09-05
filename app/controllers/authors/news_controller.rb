@@ -1,6 +1,6 @@
 module Authors
   class NewsController < AuthorController
-    before_action :set_news, only: [:show, :edit, :update, :destroy]
+    before_action :set_news, only: [:show, :edit, :update, :destroy, :publish, :unpublish]
 
     # GET /news
     # GET /news.json
@@ -20,6 +20,16 @@ module Authors
 
     # GET /news/1/edit
     def edit
+    end
+
+    def publish
+      @news.update(published: true)
+      redirect_to authors_news_path
+    end
+
+    def unpublish
+      @news.update(published: false)
+      redirect_to authors_news_path
     end
 
     # POST /news
@@ -57,7 +67,7 @@ module Authors
     def destroy
       @news.destroy
       respond_to do |format|
-        format.html { redirect_to authors_news_path(@news), notice: 'News post was successfully destroyed.' }
+        format.html { redirect_to authors_news_path, notice: 'News post was successfully destroyed.' }
         format.json { head :no_content }
       end
     end
