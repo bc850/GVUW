@@ -12,46 +12,42 @@
   <% end %>
 
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-4">
       <div class="card" style="width: 20rem;">
         <div class="card-block">
           <h4 class="card-title"><%= yield(:page_title) %></h4>
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">
-
+            <div class="field">
+              <%= form.label :title %>
+              <%= form.text_field :title, class: 'form-control' %>
+            </div>
           </li>
           <li class="list-group-item">
-
+            <div class="field">
+              <%= form.label :banner_image_url %>
+              <%= form.text_field :banner_image_url, class: 'form-control' %>
+            </div>
           </li>
           <li class="list-group-item">
-
+            <div class="field">
+              <%= form.label :description %>
+              <%= form.text_field :description, class: 'form-control' %>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="actions">
+              <%= form.submit %>
+            </div>
           </li>
         </ul>
       </div>
-
-      <div class="field">
-        <%= form.label :title %>
-        <%= form.text_field :title %>
-      </div>
-      <div class="field">
-        <%= form.label :banner_image_url %>
-        <%= form.text_field :banner_image_url %>
-      </div>
-      <div class="field">
-        <%= form.label :description %>
-        <%= form.text_field :description %>
-      </div>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-8">
       <div class="field">
-        <%= form.label :body %>
         <%= form.text_area :body %>
       </div>
     </div>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
   </div>
 <% end %>
