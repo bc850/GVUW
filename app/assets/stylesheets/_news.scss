@@ -1,4 +1,4 @@
-$light-gray: #d3d3d3;
+$light-gray: #eee;
 $white: #fff;
 
 .news.index {
@@ -51,7 +51,7 @@ $white: #fff;
 .news.edit, .news.new {
   .card {
     .card-block {
-      background-color: $white;
+      background-color: $light-gray;
     }
     .card-title {
       margin-bottom: 0;
