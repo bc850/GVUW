@@ -23,12 +23,12 @@ module Authors
     end
 
     def publish
-      @news.update(published: true, published_at: Time.now)
+      @news.publish
       redirect_to authors_news_index_path
     end
 
     def unpublish
-      @news.update(published: false, published_at: nil)
+      @news.unpublish
       redirect_to authors_news_index_path
     end
 
