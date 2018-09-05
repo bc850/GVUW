@@ -19,7 +19,7 @@ class News < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
 
-  scope :most_recent, -> { order(id: :desc) }
+  scope :most_recent, -> { order(published_at: :desc) }
   scope :published, -> { where(published: true) }
 
   belongs_to :author#, :optional => true
@@ -30,6 +30,6 @@ class News < ApplicationRecord
   end
 
   def display_day_published
-    "Published #{created_at.strftime('%-b %-d, %Y')}"
+    "Published #{published_at.strftime('%-b %-d, %Y')}"
   end
 end
