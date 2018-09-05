@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   devise_for :authors
   namespace :authors do
     resources :news do
-      put 'publish' => 'news#publish'
-      put 'unpublish' => 'news#unpublish'
+      put 'publish' => 'news#publish', on: :member
+      put 'unpublish' => 'news#unpublish', on: :member
     end
   end
 

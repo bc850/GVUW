@@ -24,12 +24,12 @@ module Authors
 
     def publish
       @news.update(published: true)
-      redirect_to authors_news_path
+      redirect_to authors_news_index_path
     end
 
     def unpublish
       @news.update(published: false)
-      redirect_to authors_news_path
+      redirect_to authors_news_index_path
     end
 
     # POST /news
