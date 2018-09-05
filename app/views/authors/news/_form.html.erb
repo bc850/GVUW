@@ -50,6 +50,10 @@
           </li>
         </ul>
       </div>
+      <% if @news.persisted? %>
+        <%= link_to 'Show', @news %> |
+      <% end %>
+      <%= link_to 'Back', authors_news_index_path %>
     </div>
     <div class="col-md-8">
       <div class="field">
