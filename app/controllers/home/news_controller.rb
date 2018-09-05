@@ -3,7 +3,7 @@ module Home
     # GET /news
     # GET /news.json
     def index
-      @news = News.most_recent.published
+      @news = News.most_recent.published.paginate(:page => params[:page], :per_page => 3)
     end
 
     # GET /news/1

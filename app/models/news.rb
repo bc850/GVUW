@@ -22,7 +22,7 @@ class News < ApplicationRecord
   scope :most_recent, -> { order(published_at: :desc) }
   scope :published, -> { where(published: true) }
 
-  belongs_to :author#, :optional => true
+  belongs_to :author
 
   def should_generate_new_friendly_id?
     # if you update the title, you want to update the slug as well
