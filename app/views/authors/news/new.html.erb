@@ -1,8 +1,6 @@
 <% provide(:page_title, "New News Post") %>
 <% provide(:author, "active") %>
 
-<h1>New News Post</h1>
-
 <%= render 'form', news: @news, url: authors_news_index_url %>
 
 <%= link_to 'Back', authors_news_index_path %>
