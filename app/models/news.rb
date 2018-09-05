@@ -30,7 +30,11 @@ class News < ApplicationRecord
   end
 
   def display_day_published
-    "Published #{published_at.strftime('%-b %-d, %Y')}"
+    if published_at.present?
+      "Published #{published_at.strftime('%-b %-d, %Y')}"
+    else
+      "Not published yet."
+    end
   end
 
   def publish
