@@ -28,6 +28,7 @@ gem 'jquery-rails'
 gem 'friendly_id', '~> 5.2.0'
 gem 'devise'
 gem 'annotate'
+gem 'will_paginate', '~> 3.1.0'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
