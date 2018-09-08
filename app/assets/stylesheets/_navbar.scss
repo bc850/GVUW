@@ -1,12 +1,17 @@
-$primary-color: #eee;
-$accent-color: #2f2f2f;
-$primary-color-text: #d2d2d2;
-$primary-color-light: #fff;
+@import "colors";
 
 .navbar {
   border-radius: 0;
   margin-bottom: 20px;
   background-color: $primary-color;
+  padding: 0;
+
+  #nav-container {
+    img {
+      width: 175px;
+      height: auto;
+    }
+  }
 
   .navbar-brand {
     font-weight: bolder;
@@ -27,6 +32,7 @@ $primary-color-light: #fff;
 
     &.active {
       color: $primary-color-text !important;
+      background-color: $active-background;
     }
   }
 
@@ -38,6 +44,15 @@ $primary-color-light: #fff;
       border: 1px solid $primary-color-light;
     }
   }
+  /*ul {
+    margin: 0;
+    padding: 0;
+    li {
+      a.nav-link {
+        margin: 0;
+      }
+    }
+  }*/
 }
 
 .collapse-bg {
