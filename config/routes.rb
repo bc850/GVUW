@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :authors
   namespace :authors do
+    get '/account' => 'accounts#edit', as: :account
     resources :news do
       put 'publish' => 'news#publish', on: :member
       put 'unpublish' => 'news#unpublish', on: :member
