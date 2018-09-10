@@ -37,6 +37,9 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'font-awesome-rails'
 gem 'acts-as-taggable-on', '~> 6.0'
 
+gem 'execjs'
+gem 'therubyracer'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
