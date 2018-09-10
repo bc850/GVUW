@@ -52,11 +52,13 @@
 .news.edit, .news.new {
   .card {
     .card-block {
-      background-color: $light-gray;
+      height: 45px;
     }
     .card-title {
       margin-bottom: 0;
       font-size: 18px;
+      margin-left: 10px;
+      margin-top: 7px;
     }
     .list-group-item {
       padding: 10px;
@@ -101,7 +103,7 @@
 .news.edit, .news.new {
   .card {
     .card-title {
-      font-size: 16px;
+      font-size: 24px;
     }
     .list-group-item {
       padding: 10px;
@@ -110,7 +112,7 @@
         background-color: $light-gray;
       }
       &:last-child {
-        background-color: $light-gray;
+        //background-color: $light-gray;
       }
     }
   }
