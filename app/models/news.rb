@@ -24,13 +24,10 @@ class News < ApplicationRecord
   scope :most_recent, -> { order(published_at: :desc) }
   scope :published, -> { where(published: true) }
   scope :recent_paginate, -> (page) { most_recent.paginate(:page => page, per_page: 3) }
+  scope :with_tag, -> (tag) { tagged_with(tag) if tag.present? }
 
   scope :list_for, -> (page, tag) do
-    if tag.present?
-      recent_paginate(page).tagged_with(tag)
-    else
-      recent_paginate(page)
-    end
+    recent_paginate(page).with_tag(tag)
   end
 
   belongs_to :author
