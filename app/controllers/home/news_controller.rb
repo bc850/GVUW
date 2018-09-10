@@ -3,13 +3,17 @@ module Home
     # GET /news
     # GET /news.json
     def index
-      @news = News.most_recent.published.paginate(:page => params[:page], :per_page => 3)
+      if params[:tag].present?
+        @news = News.most_recent.published.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 3)
+      else
+        @news = News.most_recent.published.paginate(:page => params[:page], :per_page => 3)
+      end
     end
 
     # GET /news/1
     # GET /news/1.json
     def show
-      @news = News.friendly.find(params[:id])
+      @news = News.published.friendly.find(params[:id])
     end
   end
 end
