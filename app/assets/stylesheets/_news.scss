@@ -21,7 +21,7 @@
       padding: 10px;
       .card-title {
         font-size: 1.3rem;
-        margin-bottom: 0;
+        margin-bottom: 0.3rem;
         a {
           color: black;
           text-decoration: none;
@@ -31,19 +31,18 @@
         margin-bottom: 0;
         a {
           font-family: 'Montserrat', sans-serif;
-          font-size: 12px;
+          font-size: 12px !important;
         }
       }
       .published-date {
-        font-size: 0.8rem;
-        color: #787878;
+        font-size: 0.7rem;
+        color: #787878 !important;
         font-weight: 300;
         margin-top: 0.3rem;
         margin-bottom: 0.3rem;
       }
       .card-text {
-        font-size: 0.9rem;
-        color: black;
+        font-size: 0.9rem !important;
       }
     }
   }
@@ -79,6 +78,14 @@
 }
 
 .news.show {
+  span {
+    font-size: 18px !important;
+    font-weight: 400 !important;
+  }
+  p img {
+    width: 100%;
+    height: auto;
+  }
   .author-bio {
     background-color: white;
     padding: 15px 45px;

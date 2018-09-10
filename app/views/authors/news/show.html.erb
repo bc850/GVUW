@@ -2,11 +2,20 @@
 <% provide(:author, "active") %>
 
 <div class="row">
-  <%= link_to 'Edit', edit_authors_news_path(@news), class: 'btn btn-sm btn-warning' %>
-  <%= link_to 'Remove', authors_news_path(@news), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
-  <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 text-xs-center">
+  <div>
+    <%= link_to 'Edit', edit_authors_news_path(@news), class: 'btn btn-sm btn-warning' %>
+    <%= link_to 'Remove', authors_news_path(@news), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
+  </div>
+  <div class="col-md-8 col-md-offset-2">
     <h1><%= @news.title %></h1>
-    <p><%= @news.display_day_published %></p>
-    <%= @news.body.html_safe %>
+    <div class="border-top border-bottom">
+      <p class="published mt-3"><%= @news.display_day_published %></p>
+    </div>
+    <div class="border-bottom">
+      <p class="tags mt-3"><%= raw @news.tags.map { |t| link_to t.name, news_index_path(tag: t.name) }.join(', ') %></p>
+    </div>
+    <div>
+      <p class="news_body mt-3"><%= @news.body.html_safe %></span>
+    </div>
   </div>
 </div>
