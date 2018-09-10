@@ -4,9 +4,9 @@ module Home
     # GET /news.json
     def index
       if params[:tag].present?
-        @news = news_prefix.most_recent.published.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 3)
+        @news = news_prefix.most_recent.published.tagged_with(params[:tag]).paginator
       else
-        @news = news_prefix.most_recent.published.paginate(:page => params[:page], :per_page => 3)
+        @news = news_prefix.most_recent.published.paginator
       end
     end
 
@@ -20,6 +20,10 @@ module Home
 
     def news_prefix
       News.published
+    end
+
+    def paginator
+      paginate(:page => params[:page], :per_page => 3)
     end
   end
 end
