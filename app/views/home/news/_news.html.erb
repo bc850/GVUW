@@ -7,7 +7,6 @@
       <p>Tags: <%= raw news.tags.map { |t| link_to t.name, news_index_path(tag: t.name) }.join(', ') %></p>
       <p class="published-date"><%= news.display_day_published %></p>
       <p class="card-text"><%= truncate(news.description, length: 130) %></p>
-      <%= link_to 'Read', news, class: 'btn btn-primary' %>
     </div>
   </div>
 </div>
