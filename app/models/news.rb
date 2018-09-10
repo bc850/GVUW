@@ -23,11 +23,13 @@ class News < ApplicationRecord
 
   scope :most_recent, -> { order(published_at: :desc) }
   scope :published, -> { where(published: true) }
+  scope :recent_paginate, -> (page) { most_recent.paginate(:page => page, per_page: 3) }
+
   scope :list_for, -> (page, tag) do
     if tag.present?
-      most_recent.paginate(:page => page, per_page: 3).tagged_with(tag)
+      recent_paginate(page).tagged_with(tag)
     else
-      most_recent.paginate(:page => page, per_page: 3)
+      recent_paginate(page)
     end
   end
 
