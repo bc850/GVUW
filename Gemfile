@@ -38,7 +38,7 @@ gem 'font-awesome-rails'
 gem 'acts-as-taggable-on', '~> 6.0'
 
 gem 'execjs'
-gem 'therubyracer'
+gem 'mini_racer'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
