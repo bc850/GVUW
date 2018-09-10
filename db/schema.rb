@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2018_09_10_133843) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "authors", force: :cascade do |t|
     t.string "name"
     t.string "email", default: "", null: false
@@ -30,7 +33,7 @@ ActiveRecord::Schema.define(version: 2018_09_10_133843) do
     t.index ["reset_password_token"], name: "index_authors_on_reset_password_token", unique: true
   end
 
-  create_table "friendly_id_slugs", force: :cascade do |t|
+  create_table "friendly_id_slugs", id: :serial, force: :cascade do |t|
     t.string "slug", null: false
     t.integer "sluggable_id", null: false
     t.string "sluggable_type", limit: 50
@@ -50,14 +53,14 @@ ActiveRecord::Schema.define(version: 2018_09_10_133843) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "banner_image_url"
-    t.integer "author_id"
+    t.bigint "author_id"
     t.boolean "published", default: false
     t.datetime "published_at"
     t.index ["author_id"], name: "index_news_on_author_id"
     t.index ["slug"], name: "index_news_on_slug", unique: true
   end
 
-  create_table "taggings", force: :cascade do |t|
+  create_table "taggings", id: :serial, force: :cascade do |t|
     t.integer "tag_id"
     t.string "taggable_type"
     t.integer "taggable_id"
@@ -76,10 +79,11 @@ ActiveRecord::Schema.define(version: 2018_09_10_133843) do
     t.index ["tagger_id"], name: "index_taggings_on_tagger_id"
   end
 
-  create_table "tags", force: :cascade do |t|
+  create_table "tags", id: :serial, force: :cascade do |t|
     t.string "name"
     t.integer "taggings_count", default: 0
     t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
+  add_foreign_key "news", "authors"
 end
