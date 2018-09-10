@@ -21,9 +21,11 @@ class News < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
 
+  PER_PAGE = 3
+
   scope :most_recent, -> { order(published_at: :desc) }
   scope :published, -> { where(published: true) }
-  scope :recent_paginate, -> (page) { most_recent.paginate(:page => page, per_page: 3) }
+  scope :recent_paginate, -> (page) { most_recent.paginate(page: page, per_page: PER_PAGE) }
   scope :with_tag, -> (tag) { tagged_with(tag) if tag.present? }
 
   scope :list_for, -> (page, tag) do
