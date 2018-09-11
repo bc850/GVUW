@@ -29,6 +29,12 @@
   }
 }
 
+.events {
+  h1 {
+    font-size: 40px;
+  }
+}
+
 @include media-breakpoint-up(sm) {
 
 }
@@ -60,6 +66,19 @@
     }
   }
   .whatwedo {
+    h1 {
+      font-size: 55px;
+    }
+    p {
+      font-size: 24px;
+    }
+  }
+  .events {
+    h1 {
+      font-size: 55px;
+    }
+  }
+  .focusareas {
     h1 {
       font-size: 55px;
     }
