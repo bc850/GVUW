@@ -10,68 +10,68 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item mr-2">
-          <a class="nav-link text-dark" href="#">Why Live United</a>
+          <a class="nav-link " href="#">Why Live United</a>
         </li>
-        <li class="nav-item dropdown mr-2 text-dark">
-          <a class="<%= 'active' if current_page?(authors_news_index_path) %> nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item dropdown mr-2 ">
+          <a class="<%= 'active' if current_page?(authors_news_index_path) %> nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             What We Do
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item text-dark" href="#">Our Work</a>
+            <a class="dropdown-item " href="#">Our Work</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item text-dark" href="#">Our Focus Areas</a>
+            <a class="dropdown-item " href="#">Our Focus Areas</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item text-dark" href="#">Impact Stories</a>
+            <a class="dropdown-item " href="#">Impact Stories</a>
           </div>
         </li>
-        <li class="nav-item dropdown mr-2 text-dark">
-          <a class="<%= 'active' if current_page?(authors_news_index_path) %> nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item dropdown mr-2 ">
+          <a class="<%= 'active' if current_page?(authors_news_index_path) %> nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Get Involved
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item text-dark" href="#">Give</a>
+            <a class="dropdown-item " href="#">Give</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item text-dark" href="#">Advocate</a>
+            <a class="dropdown-item " href="#">Advocate</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item text-dark" href="#">Volunteer</a>
+            <a class="dropdown-item " href="#">Volunteer</a>
           </div>
         </li>
         <% if author_signed_in? %>
-          <li class="nav-item dropdown mr-2 text-dark">
+          <li class="nav-item dropdown mr-2 ">
         <% else %>
-          <li class="nav-item dropdown mr-2 text-dark">
+          <li class="nav-item dropdown mr-2 ">
         <% end %>
-          <a class="<%= 'active' if current_page?(authors_news_index_path) %> nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="<%= 'active' if current_page?(authors_news_index_path) %> nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             About
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item text-dark" href="#">History</a>
+            <a class="dropdown-item " href="#">History</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item text-dark" href="#">Leadership & Staff</a>
+            <a class="dropdown-item " href="#">Leadership & Staff</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item text-dark" href="#">2018 Campaign Cabinet</a>
+            <a class="dropdown-item " href="#">2018 Campaign Cabinet</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item text-dark" href="#">Partners</a>
+            <a class="dropdown-item " href="#">Partners</a>
           </div>
         </li>
         <% if author_signed_in? %>
-          <li class="nav-item mr-2 text-dark">
+          <li class="nav-item mr-2 ">
         <% else %>
-          <li class="nav-item text-dark">
+          <li class="nav-item ">
         <% end %>
-          <%= link_to 'Donate', root_path, class: "nav-link #{yield(:blog_active)} text-dark" %>
+          <%= link_to 'Donate', root_path, class: "nav-link #{yield(:donate_active)} " %>
         </li>
         <% if author_signed_in? %>
-          <li class="nav-item dropdown text-dark">
-            <a class="<%= 'active' if current_page?(authors_news_index_path) %> nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <li class="nav-item dropdown ">
+            <a class="<%= 'active' if current_page?(authors_news_index_path) || current_page?(authors_account_path) %> nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <%= current_author.display_name %>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <%= link_to 'Edit News', authors_news_index_path, class: "text-dark dropdown-item #{yield(:author)}" %>
-              <a class="dropdown-item text-dark" href="#">Edit Pictures</a>
+              <%= link_to 'Edit News', authors_news_index_path, class: "dropdown-item #{yield(:author_news)}" %>
+              <a class="dropdown-item " href="#">Edit Pictures</a>
               <div class="dropdown-divider"></div>
-              <%= link_to 'Account', authors_account_path, class: "dropdown-item text-dark #{yield(:author_settings)}" %>
-              <%= link_to 'Logout', destroy_author_session_path, method: :delete, class: "dropdown-item text-dark" %>
+              <%= link_to 'Account', authors_account_path, class: "dropdown-item #{yield(:author_settings)}" %>
+              <%= link_to 'Logout', destroy_author_session_path, method: :delete, class: "dropdown-item " %>
             </div>
           </li>
         <% end %>
