@@ -67,10 +67,10 @@
               <%= current_author.display_name %>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <%= link_to 'Edit News', authors_news_index_path, class: " text-dark dropdown-item #{yield(:author)}" %>
+              <%= link_to 'Edit News', authors_news_index_path, class: "text-dark dropdown-item #{yield(:author)}" %>
               <a class="dropdown-item text-dark" href="#">Edit Pictures</a>
               <div class="dropdown-divider"></div>
-              <%= link_to 'Account', authors_account_path, class: 'dropdown-item text-dark' %>
+              <%= link_to 'Account', authors_account_path, class: "dropdown-item text-dark #{yield(:author_settings)}" %>
               <%= link_to 'Logout', destroy_author_session_path, method: :delete, class: "dropdown-item text-dark" %>
             </div>
           </li>
