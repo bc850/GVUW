@@ -1,1 +1,76 @@
-<h1>Edit Account Dude</h1>
+<div class="row">
+  <!-- Basic info section -->
+  <div class="col-md-6">
+    <%= form_tag authors_info_path, method: :put do %>
+      <%= fields_for :author do |f| %>
+        <div class="card">
+          <div class="card-body">
+            <div class="car-title">
+              <h4>Basic Info</h4>
+            </div>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="field">
+                <%= f.label :name %>
+                <%= f.text_field :name, class: 'form-control' %>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="field">
+                <%= f.label :email %>
+                <%= f.email_field :email, class: 'form-control' %>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="field">
+                <%= f.label :bio %>
+                <%= f.text_area :bio, class: 'form-control' %>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <%= f.submit "Update info", class: "btn btn-primary" %>
+            </li>
+          </ul>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Change password section -->
+  <div class="col-md-6">
+    <%= form_tag authors_password_path, method: :put do %>
+      <%= fields_for :author do |f| %>
+        <div class="card">
+          <div class="card-body">
+            <div class="car-title">
+              <h4>Change password</h4>
+            </div>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="field">
+                <%= f.label :current_password %>
+                <%= f.password_field :current_password, nil, class: 'form-control' %>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="field">
+                <%= f.label :new_password %>
+                <%= f.password_field :new_password, nil, class: 'form-control' %>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="field">
+                <%= f.label :new_password_confirmation %>
+                <%= f.password_field :new_password_confirmation, nil, class: 'form-control' %>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <%= submit_tag "Update password", class: "btn btn-warning" %>
+            </li>
+          </ul>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
