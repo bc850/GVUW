@@ -15,13 +15,13 @@ module Authors
     end
 
     def change_password
-      # password or confirmation are blank
-      # password or confirmation don't match
-      if current_author.valid_password?(author_password_params[:current_password])
-        if current_author.update(
+      author = current_author
+      if author.valid_password?(author_password_params[:current_password])
+        if author.update(
           password: author_password_params[:new_password],
           password_confirmation: author_password_params[:new_password_confirmation]
         )
+          sign_in(author, bypass: true)
           flash[:success] = "Successfully changed password!"
         else
           flash[:danger] = current_author.errors.full_messages.join('. ') << '.'
