@@ -13,9 +13,10 @@ Rails.application.routes.draw do
   scope module: 'home' do
     get 'about' => 'pages#about', as: :about
     get 'contact' => 'pages#contact', as: :contact
+    get 'home' => 'pages#home', as: :home
     get 'news' => 'news#index', as: :news_index
     get 'news/:id' => 'news#show', as: :news
   end
-  root to: "home/news#index"
+  root to: "home/pages#home"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
