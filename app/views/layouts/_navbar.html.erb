@@ -9,10 +9,10 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item mr-3">
+        <li class="nav-item mr-2">
           <a class="nav-link text-dark" href="#">Why Live United</a>
         </li>
-        <li class="nav-item dropdown mr-3 text-dark">
+        <li class="nav-item dropdown mr-2 text-dark">
           <a class="<%= 'active' if current_page?(authors_news_index_path) %> nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             What We Do
           </a>
@@ -24,7 +24,7 @@
             <a class="dropdown-item text-dark" href="#">Impact Stories</a>
           </div>
         </li>
-        <li class="nav-item dropdown mr-3 text-dark">
+        <li class="nav-item dropdown mr-2 text-dark">
           <a class="<%= 'active' if current_page?(authors_news_index_path) %> nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Get Involved
           </a>
@@ -37,9 +37,9 @@
           </div>
         </li>
         <% if author_signed_in? %>
-          <li class="nav-item dropdown mr-3 text-dark">
+          <li class="nav-item dropdown mr-2 text-dark">
         <% else %>
-          <li class="nav-item dropdown mr-3 text-dark">
+          <li class="nav-item dropdown mr-2 text-dark">
         <% end %>
           <a class="<%= 'active' if current_page?(authors_news_index_path) %> nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             About
@@ -55,7 +55,7 @@
           </div>
         </li>
         <% if author_signed_in? %>
-          <li class="nav-item mr-3 text-dark">
+          <li class="nav-item mr-2 text-dark">
         <% else %>
           <li class="nav-item text-dark">
         <% end %>
@@ -64,7 +64,7 @@
         <% if author_signed_in? %>
           <li class="nav-item dropdown text-dark">
             <a class="<%= 'active' if current_page?(authors_news_index_path) %> nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              My Settings
+              <%= current_author.display_name %>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <%= link_to 'Edit News', authors_news_index_path, class: " text-dark dropdown-item #{yield(:author)}" %>
