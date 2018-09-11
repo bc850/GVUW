@@ -1,1 +1,57 @@
+@import "bootstrap";
 
+.hero {
+  -webkit-background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 600px;
+  margin-top: -50px;
+  .hero_row {
+    height: 600px;
+    h1, p {
+      color: #fff !important;
+    }
+    h1 {
+      font-size: 45px;
+    }
+    p {
+      font-size: 30px;
+    }
+  }
+}
+
+@include media-breakpoint-up(sm) {
+
+}
+
+@include media-breakpoint-up(md) {
+  .hero {
+    .hero_row {
+      h1 {
+        font-size: 85px;
+      }
+      p {
+        font-size: 35px;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .hero {
+    height: 660px;
+    .hero_row {
+      height: 600px;
+      h1 {
+        font-size: 125px;
+      }
+      p {
+        font-size: 40px;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(xl) {
+
+}
