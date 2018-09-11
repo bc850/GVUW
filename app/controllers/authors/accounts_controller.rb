@@ -15,8 +15,12 @@ module Authors
 
     private
 
-    def author_params
+    def author_info_params
       params.require(:author).permit(:name, :email, :bio)
+    end
+
+    def author_password_params
+      params.require(:author).permit(:current_password, :new_password, :new_password_confirmation)
     end
 
   end
