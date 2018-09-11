@@ -1,16 +1,18 @@
 <% provide(:page_title, "All News Posts") %>
 <% provide(:author_news, "active") %>
 
-<div class="row">
-  <div>
-    <%= link_to 'New', new_authors_news_path, class: 'btn btn-primary' %>
+<div class="container <%= controller_name %> <%= action_name %>">
+  <div class="row">
+    <div>
+      <%= link_to 'New', new_authors_news_path, class: 'btn btn-primary' %>
+    </div>
+    <br>
+    <br>
+    <table class="table table-striped">
+      <tr>
+        <th colspan="5">Title</th>
+      </tr>
+      <%= render @news %>
+    </table>
   </div>
-  <br>
-  <br>
-  <table class="table table-striped">
-    <tr>
-      <th colspan="5">Title</th>
-    </tr>
-    <%= render @news %>
-  </table>
 </div>
