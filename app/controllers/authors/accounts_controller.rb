@@ -6,7 +6,8 @@ module Authors
     end
 
     def update_info
-
+      current_author.update(author_info_params)
+      redirect_to authors_account_path
     end
 
     def change_password
