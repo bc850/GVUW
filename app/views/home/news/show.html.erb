@@ -1,20 +1,18 @@
 <% provide(:page_title, @news.title) %>
 <% provide(:blog_active, "active") %>
 
-<div class="container <%= controller_name %> <%= action_name %>">
-  <div class="row d-flex justify-content-center">
-    <div class="container">
-      <div class="col-md-8 col-md-offset-2">
-        <h1><%= @news.title %></h1>
-        <div class="border-top border-bottom">
-          <p class="published mt-3"><%= @news.display_day_published %></p>
-        </div>
-        <div class="border-bottom">
-          <p class="tags mt-3"><%= raw @news.tags.map { |t| link_to t.name, news_index_path(tag: t.name) }.join(', ') %></p>
-        </div>
-        <div>
-          <p class="news_body mt-3"><span><%= @news.body.html_safe %></span></p>
-        </div>
+<div class="row d-flex justify-content-center">
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2">
+      <h1><%= @news.title %></h1>
+      <div class="border-top border-bottom">
+        <p class="published mt-3"><%= @news.display_day_published %></p>
+      </div>
+      <div class="border-bottom">
+        <p class="tags mt-3"><%= raw @news.tags.map { |t| link_to t.name, news_index_path(tag: t.name) }.join(', ') %></p>
+      </div>
+      <div>
+        <p class="news_body mt-3"><span><%= @news.body.html_safe %></span></p>
       </div>
     </div>
   </div>
