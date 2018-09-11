@@ -24,4 +24,6 @@ class Author < ApplicationRecord
   devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable
 
   has_many :news
+
+  validates_presence_of :name, on: :update
 end
