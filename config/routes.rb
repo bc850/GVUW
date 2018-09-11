@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   namespace :authors do
     get '/account' => 'accounts#edit', as: :account
     put '/info' => 'accounts#update_info', as: :info
-    put '/password' => 'accounts#update_password', as: :password
+    put '/change_password' => 'accounts#change_password', as: :change_password
     resources :news do
       put 'publish' => 'news#publish', on: :member
       put 'unpublish' => 'news#unpublish', on: :member

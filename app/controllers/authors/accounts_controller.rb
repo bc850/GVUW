@@ -9,6 +9,10 @@ module Authors
 
     end
 
+    def change_password
+
+    end
+
     private
 
     def author_params
