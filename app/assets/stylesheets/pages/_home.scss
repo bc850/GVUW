@@ -1,5 +1,10 @@
 @import "bootstrap";
 
+[class*="fa-"] {
+  font-size: 128px;
+  color: #333333;
+  text-decoration: none;
+}
 .hero {
   -webkit-background-size: cover;
   background-repeat: no-repeat;
@@ -19,7 +24,6 @@
     }
   }
 }
-
 .whatwedo {
   h1 {
     font-size: 40px;
@@ -28,15 +32,34 @@
     font-size: 18px;
   }
 }
-
 .events {
+  h1 {
+    font-size: 40px;
+  }
+}
+.focusareas {
+  h1 {
+    font-size: 40px;
+  }
+  p {
+    font-size: 18px;
+  }
+  .econ, .heart {
+    margin-top: 45px;
+  }
+}
+.getinvolved {
   h1 {
     font-size: 40px;
   }
 }
 
 @include media-breakpoint-up(sm) {
-
+  .focusareas {
+    .econ, .heart {
+      margin-top: 0;
+    }
+  }
 }
 
 @include media-breakpoint-up(md) {
@@ -84,6 +107,11 @@
     }
     p {
       font-size: 24px;
+    }
+  }
+  .getinvolved {
+    h1 {
+      font-size: 55px;
     }
   }
 }
