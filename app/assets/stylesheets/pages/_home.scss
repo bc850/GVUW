@@ -66,6 +66,9 @@
       font-size: 18px;
     }
   }
+  .advocate, .volunteer {
+    margin-top: 45px;
+  }
 }
 
 @include media-breakpoint-up(sm) {
@@ -84,6 +87,13 @@
       }
       p {
         font-size: 35px;
+      }
+    }
+  }
+  .getinvolved {
+    .card {
+      .card-topper {
+        height: 375px;
       }
     }
   }
@@ -126,6 +136,14 @@
   .getinvolved {
     h1 {
       font-size: 55px;
+    }
+    .card {
+      .card-topper {
+        height: 200px;
+      }
+    }
+    .advocate, .volunteer {
+      margin-top: 0;
     }
   }
 }
