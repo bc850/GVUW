@@ -24,6 +24,22 @@
     }
   }
 }
+.counters {
+  background-color: #fff;
+  padding-top: 90px;
+  padding-bottom: 90px;
+  .campaign, .partners {
+    margin-top: 45px;
+  }
+  .number_counter {
+    span {
+      font-size: 35px;
+    }
+    p {
+      font-size: 24px;
+    }
+  }
+}
 .whatwedo {
   h1 {
     font-size: 40px;
@@ -87,6 +103,19 @@
       }
       p {
         font-size: 35px;
+      }
+    }
+  }
+  .counters {
+    .campaign, .partners {
+      margin-top: 0;
+    }
+    .number_counter {
+      span {
+        font-size: 55px;
+      }
+      p {
+        font-size: 18px;
       }
     }
   }
