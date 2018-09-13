@@ -9,6 +9,8 @@ Rails.application.routes.draw do
       put 'unpublish' => 'news#unpublish', on: :member
     end
     resources :events do #-> url.com/events/:id
+      put 'publish' => 'events#publish', on: :member
+      put 'unpublish' => 'events#unpublish', on: :member
       resources :registrations #-> url.com/events/:event_id/registrations/
     end
   end
