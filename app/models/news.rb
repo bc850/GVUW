@@ -2,7 +2,7 @@
 #
 # Table name: news
 #
-#  id               :integer          not null, primary key
+#  id               :bigint(8)        not null, primary key
 #  title            :string
 #  body             :text
 #  description      :string
@@ -10,9 +10,10 @@
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #  banner_image_url :string
-#  author_id        :integer
+#  author_id        :bigint(8)
 #  published        :boolean          default(FALSE)
 #  published_at     :datetime
+#  featured         :boolean
 #
 
 class News < ApplicationRecord

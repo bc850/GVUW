@@ -2,7 +2,7 @@
 #
 # Table name: authors
 #
-#  id                     :integer          not null, primary key
+#  id                     :bigint(8)        not null, primary key
 #  name                   :string
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
@@ -16,6 +16,7 @@
 #  last_sign_in_ip        :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  bio                    :text
 #
 
 class Author < ApplicationRecord
