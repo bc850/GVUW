@@ -1,5 +1,5 @@
-module Authors
-  class RegistrationsController < AuthorController
+module Home
+  class RegistrationsController < HomeController
     def new
       @event = Event.find params[:event_id]
       @registration = @event.registration.new
