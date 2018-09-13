@@ -9,7 +9,7 @@ module Home
     end
 
     def home
-      @news = News.published.order(created_at: :desc).limit(3)
+      @news = News.published.featured.order(created_at: :desc).limit(3)
     end
   end
 end
