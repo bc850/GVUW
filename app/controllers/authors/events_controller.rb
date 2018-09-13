@@ -5,7 +5,7 @@ module Authors
     # GET /events
     # GET /events.json
     def index
-      @events = current_author.events.most_recent
+      @events = current_author.events.most_recent.list_for(params[:page], params[:tag])
     end
 
     # GET /events/event

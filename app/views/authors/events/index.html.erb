@@ -1,5 +1,5 @@
 <% provide(:page_title, "All Events") %>
-<% provide(:event_news, "active") %>
+<% provide(:author_events, "active") %>
 
 <div class="row">
   <div>
@@ -13,4 +13,7 @@
     </tr>
     <%= render @events %>
   </table>
+</div>
+<div class="apple_pagination">
+  <%= will_paginate @events, container: false %>
 </div>
