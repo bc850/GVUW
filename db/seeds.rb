@@ -30,8 +30,9 @@ News.create!(
   :description => 'testing',
   :slug => 'day-of-caring',
   :banner_image_url => 'https://images.pexels.com/photos/1048256/pexels-photo-1048256.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-  :author_id => 2,
+  :author_id => 1,
   :published => true,
+  :featured => true,
 )
 
 News.create!(
@@ -40,8 +41,9 @@ News.create!(
   :description => 'testing',
   :slug => 'mud-run',
   :banner_image_url => 'https://images.pexels.com/photos/33688/delicate-arch-night-stars-landscape.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-  :author_id => 2,
+  :author_id => 1,
   :published => true,
+  :featured => true,
 )
 
 News.create!(
@@ -52,6 +54,7 @@ News.create!(
   :banner_image_url => 'https://images.pexels.com/photos/730896/pexels-photo-730896.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
   :author_id => 1,
   :published => true,
+  :featured => true,
 )
 
 News.create!(
@@ -62,6 +65,7 @@ News.create!(
   :banner_image_url => 'https://images.pexels.com/photos/1093645/pexels-photo-1093645.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
   :author_id => 1,
   :published => true,
+  :featured => true,
 )
 
 ####### EVENTS CREATION #######

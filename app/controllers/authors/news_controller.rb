@@ -5,7 +5,7 @@ module Authors
     # GET /news
     # GET /news.json
     def index
-      @news = current_author.news.most_recent
+      @news = current_author.news.most_recent.list_for(params[:page], params[:tag])
     end
 
     # GET /news/1
