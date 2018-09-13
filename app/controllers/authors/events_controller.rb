@@ -1,6 +1,6 @@
 module Authors
   class EventsController < AuthorController
-    before_action :set_news, only: [:show, :edit, :update, :destroy, :publish, :unpublish]
+    before_action :set_event, only: [:show, :edit, :update, :destroy, :publish, :unpublish]
 
     # GET /events
     # GET /events.json
@@ -10,7 +10,7 @@ module Authors
 
     # GET /events/event
     def new
-      @event = current_author.event.new
+      @event = current_author.events.new
     end
 
     def show
@@ -30,7 +30,7 @@ module Authors
     # POST /events
     # POST /events.json
     def create
-      @event = current_author.event.new(event_params)
+      @event = current_author.events.new(event_params)
 
       respond_to do |format|
         if @event.save

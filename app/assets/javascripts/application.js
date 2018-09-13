@@ -27,3 +27,13 @@ document.addEventListener("turbolinks:load", function() {
     toolbar: 'undo redo | styleselect | bold italic link | image media | code',
    });
 })
+
+document.addEventListener("turbolinks:load", function() {
+  tinymce.remove();
+  tinymce.init({
+    height: '475',
+    selector: 'textarea#event_body',
+    plugins: 'image media link code',
+    toolbar: 'undo redo | styleselect | bold italic link | image media | code',
+   });
+})
