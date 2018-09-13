@@ -18,12 +18,12 @@ module Authors
 
     def publish
       @event.publish
-      redirect_to authors_events_index_path
+      redirect_to authors_events_path
     end
 
     def unpublish
       @event.unpublish
-      redirect_to authors_events_index_path
+      redirect_to authors_events_path
     end
 
     # POST /events
