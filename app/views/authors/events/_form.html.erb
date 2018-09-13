@@ -51,8 +51,14 @@
           </li>
           <li class="list-group-item">
             <div class="field">
-              <%= form.label 'Should this news publication be featured on the home page?' %>
+              <%= form.label 'Should this event be a featured event?' %>
               <%= form.check_box :featured?, class: 'form-control' %>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="field">
+              <%= form.label 'Should people be able to register for this event?' %>
+              <%= form.check_box :registerable?, class: 'form-control' %>
             </div>
           </li>
           <li class="list-group-item">
