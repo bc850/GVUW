@@ -13,6 +13,10 @@ module Authors
       @event = current_author.event.new
     end
 
+    def show
+      @event = Event.find params[:id]
+    end
+
     def publish
       @event.publish
       redirect_to authors_events_index_path
