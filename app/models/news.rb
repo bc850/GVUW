@@ -32,6 +32,8 @@ class News < ApplicationRecord
     recent_paginate(page).with_tag(tag)
   end
 
+  scope :featured, -> { where(featured: true) }
+
   belongs_to :author
 
   def should_generate_new_friendly_id?
