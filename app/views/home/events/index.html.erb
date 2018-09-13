@@ -1,1 +1,9 @@
-<h1>You're at the events index page</h1>
+<% provide(:page_title, "All Events") %>
+<% provide(:event_active, "active") %>
+
+<div class="row">
+  <%= render @events %>
+</div>
+<div class="apple_pagination">
+  <%= will_paginate @events, container: false %>
+</div>

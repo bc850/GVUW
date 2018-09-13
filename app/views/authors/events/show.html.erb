@@ -1,5 +1,5 @@
 <% provide(:page_title, @event.title) %>
-<% provide(:event, "active") %>
+<% provide(:author, "active") %>
 
 <div class="row">
   <div>
@@ -14,8 +14,8 @@
     <div class="border-bottom">
       <p class="tags mt-3"><%= raw @event.tags.map { |t| link_to t.name, events_path(tag: t.name) }.join(', ') %></p>
     </div>
-    <div>
-      <p class="news_body mt-3"><%= @event.body.html_safe %></span>
+    <div class="event_body mt-3">
+      <%= @event.body.html_safe %>
     </div>
   </div>
 </div>

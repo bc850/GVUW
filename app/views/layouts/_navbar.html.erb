@@ -75,6 +75,7 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <%= link_to 'Edit News', authors_news_index_path, class: "dropdown-item #{yield(:author_news)}" %>
+              <%= link_to 'Edit Events', authors_events_path, class: "dropdown-item #{yield(:event_news)}" %>
               <a class="dropdown-item " href="#">Edit Pictures</a>
               <div class="dropdown-divider"></div>
               <%= link_to 'Account', authors_account_path, class: "dropdown-item #{yield(:author_settings)}" %>

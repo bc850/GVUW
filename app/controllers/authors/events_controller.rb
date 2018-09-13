@@ -5,7 +5,7 @@ module Authors
     # GET /events
     # GET /events.json
     def index
-      @events = Event.all
+      @events = current_author.events.most_recent
     end
 
     # GET /events/event

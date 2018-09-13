@@ -1,6 +1,6 @@
 @import "colors";
 
-.event.index {
+.events.index {
   .pagination {
     width: 100%;
     text-align: center;
@@ -12,7 +12,7 @@
     margin-bottom: 20px;
     background-color: white;
     .card-topper {
-      height: 200px;
+      height: 200px !important;
       width: 100%;
       background-size: cover;
       background-position: center;
@@ -48,7 +48,7 @@
   }
 }
 
-.event.edit, .event.new {
+.events.edit, .events.new {
   .card {
     .card-block {
       height: 75px;
@@ -77,8 +77,8 @@
   }
 }
 
-.event.show {
-  span {
+.events.show {
+  .event_body p, .news_body p {
     font-size: 18px !important;
     font-weight: 400 !important;
   }
@@ -107,7 +107,7 @@
   }
 }
 
-.event.edit, .event.new {
+.events.edit, .events.new {
   .card {
     .card-title {
       font-size: 24px;
@@ -126,21 +126,21 @@
 }
 
 @media screen and (min-width: 34em) {
-  .event.index .card {
+  .events.index .card {
     height: 440px;
   }
 }
 
 /* Medium. Above 48em (768px) */
 @media screen and (min-width: 48em) {
-  .event.index .card {
+  .events.index .card {
     height: 420px;
   }
 }
 
 /* Extra large. Above 75em (1200px) */
 @media screen and (min-width: 75em) {
-  .event.index .card {
+  .events.index .card {
     height: 415px;
   }
 }

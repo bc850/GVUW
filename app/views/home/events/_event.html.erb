@@ -1,0 +1,15 @@
+<div class="col-lg-4 col-sm-6">
+  <div class="card">
+    <%= link_to event do %>
+      <div class="card-topper" style="background-image: url(<%= event.banner_image_url %>);"></div>
+    <% end %>
+    <div class="card-block">
+      <h4 class="card-title"><%= link_to event.title, event %></h4>
+      <p class="tags"><%= raw event.tags.map { |t| link_to t.name, events_path(tag: t.name) }.join(', ') %></p>
+      <p class="published-date"><%= event.display_day_published %></p>
+      <%= link_to event do %>
+        <p class="card-text"><%= truncate(event.description, length: 130) %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
