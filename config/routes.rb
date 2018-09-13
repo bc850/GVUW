@@ -8,6 +8,9 @@ Rails.application.routes.draw do
       put 'publish' => 'news#publish', on: :member
       put 'unpublish' => 'news#unpublish', on: :member
     end
+    resources :events do #-> url.com/events/:id
+      resources :registrations #-> url.com/events/:event_id/registrations/
+    end
   end
 
   scope module: 'home' do
@@ -16,6 +19,7 @@ Rails.application.routes.draw do
     get 'home' => 'pages#home', as: :home
     get 'news' => 'news#index', as: :news_index
     get 'news/:id' => 'news#show', as: :news
+    resources :events
   end
   root to: "home/pages#home"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
