@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_13_010252) do
+ActiveRecord::Schema.define(version: 2018_09_13_025232) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,20 @@ ActiveRecord::Schema.define(version: 2018_09_13_010252) do
     t.text "bio"
     t.index ["email"], name: "index_authors_on_email", unique: true
     t.index ["reset_password_token"], name: "index_authors_on_reset_password_token", unique: true
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "title"
+    t.string "banner_image_url"
+    t.string "description"
+    t.text "body"
+    t.string "slug"
+    t.bigint "author_id"
+    t.boolean "published"
+    t.datetime "published_at"
+    t.boolean "featured"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "friendly_id_slugs", id: :serial, force: :cascade do |t|
@@ -60,6 +74,15 @@ ActiveRecord::Schema.define(version: 2018_09_13_010252) do
     t.boolean "featured"
     t.index ["author_id"], name: "index_news_on_author_id"
     t.index ["slug"], name: "index_news_on_slug", unique: true
+  end
+
+  create_table "registrations", force: :cascade do |t|
+    t.integer "event_id"
+    t.string "name"
+    t.string "phone"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "taggings", id: :serial, force: :cascade do |t|
