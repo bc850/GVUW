@@ -1,0 +1,4 @@
+<% provide(:page_title, "Edit #{@event.title}") %>
+<% provide(:author_event, "active") %>
+
+<%= render 'form', news: @event, url: authors_event_url(@event) %>
