@@ -14,8 +14,8 @@
     <div class="border-bottom">
       <p class="tags mt-3"><%= raw @news.tags.map { |t| link_to t.name, news_index_path(tag: t.name) }.join(', ') %></p>
     </div>
-    <div>
-      <p class="news_body mt-3"><span><%= @news.body.html_safe %></span></p>
+    <div class="news_body mt-3">
+      <%= @news.body.html_safe %>
     </div>
   </div>
 </div>
