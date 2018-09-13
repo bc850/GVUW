@@ -48,14 +48,14 @@
 .overlay {
   #navi-parent {
     width: 250px;
-    height: 59px;
+    height: 50px;
     position: relative;
   }
   #navi {
     width: 100%;
     height: 100%;
     position: absolute;
-    top: -29px;
+    top: -25px;
     left: 0;
     z-index: 10;
     background-color: #09538F;
@@ -64,16 +64,58 @@
       text-align: center;
       color: #fff !important;
       text-transform: uppercase;
-      font-size: 48px;
+      font-size: 40px;
     }
   }
 }
 .whatwedo {
-  h1 {
-    font-size: 40px;
-  }
   p {
+    font-family: 'Roboto', sans-serif;
     font-size: 18px;
+  }
+  .news_container {
+    margin-top: 60px;
+    .card {
+      border: none;
+      border-radius: 0;
+      height: 400px;
+      margin-bottom: 20px;
+      background-color: white;
+      .card-topper {
+        height: 200px;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+      }
+      .card-body {
+        padding: 10px;
+        .card-title {
+          font-size: 1.3rem;
+          margin-bottom: 0.3rem;
+          a {
+            color: black;
+            text-decoration: none;
+          }
+        }
+        .tags {
+          margin-bottom: 0;
+          a {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px !important;
+          }
+        }
+        .published-date {
+          font-size: 0.7rem;
+          color: #787878 !important;
+          font-weight: 300;
+          margin-top: 0.3rem;
+          margin-bottom: 0.3rem;
+        }
+        .card-text {
+          font-size: 0.9rem !important;
+        }
+      }
+    }
   }
 }
 .events {
@@ -144,6 +186,11 @@
       }
     }
   }
+  .whatwedo {
+    .card {
+      height: 420px;
+    }
+  }
   .getinvolved {
     .card {
       .card-topper {
@@ -172,11 +219,11 @@
     }
   }
   .whatwedo {
-    h1 {
-      font-size: 55px;
+    .card {
+      height: 415px;
     }
     p {
-      font-size: 24px;
+      font-size: 16px;
     }
   }
   .events {
