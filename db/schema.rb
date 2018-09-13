@@ -78,12 +78,13 @@ ActiveRecord::Schema.define(version: 2018_09_13_171924) do
   end
 
   create_table "registrations", force: :cascade do |t|
-    t.integer "event_id"
     t.string "name"
     t.string "phone"
     t.string "email"
+    t.bigint "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_registrations_on_event_id"
   end
 
   create_table "taggings", id: :serial, force: :cascade do |t|
@@ -112,4 +113,5 @@ ActiveRecord::Schema.define(version: 2018_09_13_171924) do
   end
 
   add_foreign_key "news", "authors"
+  add_foreign_key "registrations", "events"
 end

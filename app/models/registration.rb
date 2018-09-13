@@ -13,4 +13,6 @@
 
 class Registration < ApplicationRecord
   belongs_to :event
+
+  validates :name, :phone, :email, presence: true
 end
