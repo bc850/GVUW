@@ -1,0 +1,16 @@
+<% provide(:page_title, "All Events") %>
+<% provide(:event_news, "active") %>
+
+<div class="row">
+  <div>
+    <%= link_to 'New', new_authors_event_path, class: 'btn btn-primary' %>
+  </div>
+  <br>
+  <br>
+  <table class="table table-striped">
+    <tr>
+      <th colspan="5">Title</th>
+    </tr>
+    <%= render @events %>
+  </table>
+</div>
