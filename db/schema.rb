@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_11_032643) do
+ActiveRecord::Schema.define(version: 2018_09_13_010252) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2018_09_11_032643) do
     t.bigint "author_id"
     t.boolean "published", default: false
     t.datetime "published_at"
+    t.boolean "featured"
     t.index ["author_id"], name: "index_news_on_author_id"
     t.index ["slug"], name: "index_news_on_slug", unique: true
   end
