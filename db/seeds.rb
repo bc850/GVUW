@@ -30,7 +30,9 @@ News.create!(
   :description => 'testing',
   :slug => 'day-of-caring',
   :banner_image_url => 'https://images.pexels.com/photos/1048256/pexels-photo-1048256.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-  :author_id => 2,
+  :author_id => 1,
+  :published => true,
+  :featured => true,
 )
 
 News.create!(
@@ -39,7 +41,9 @@ News.create!(
   :description => 'testing',
   :slug => 'mud-run',
   :banner_image_url => 'https://images.pexels.com/photos/33688/delicate-arch-night-stars-landscape.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-  :author_id => 2,
+  :author_id => 1,
+  :published => true,
+  :featured => true,
 )
 
 News.create!(
@@ -49,6 +53,8 @@ News.create!(
   :slug => 'united-way-golf-tournament',
   :banner_image_url => 'https://images.pexels.com/photos/730896/pexels-photo-730896.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
   :author_id => 1,
+  :published => true,
+  :featured => true,
 )
 
 News.create!(
@@ -58,4 +64,56 @@ News.create!(
   :slug => 'united-way-annual-campaign',
   :banner_image_url => 'https://images.pexels.com/photos/1093645/pexels-photo-1093645.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
   :author_id => 1,
+  :published => true,
+  :featured => true,
+)
+
+####### EVENTS CREATION #######
+Event.delete_all
+Event.create!(
+  :title => 'Possum Creek Mud Run',
+  :body => 'This will be a test',
+  :description => 'This is the Possum Creek Mud Run near Ray City, GA. It will happen and be awesome. Many Moody AFB personnel will probably be there.',
+  :slug => 'possum-creek-mud-run',
+  :banner_image_url => 'https://images.pexels.com/photos/914128/pexels-photo-914128.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+  :author_id => '1',
+  :published => 'true',
+  :featured => 'true',
+  :published_at => '2018-09-12',
+)
+
+Event.create!(
+  :title => 'SGMC Blood Drive',
+  :body => 'This will be another test.',
+  :description => 'This is the Possum Creek Mud Run near Ray City, GA. It will happen and be awesome. Many Moody AFB personnel will probably be there.',
+  :slug => 'sgmc-blood-drive',
+  :banner_image_url => 'https://images.pexels.com/photos/1064566/pexels-photo-1064566.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+  :author_id => '1',
+  :published => 'true',
+  :featured => 'true',
+  :published_at => '2018-09-11',
+)
+
+Event.create!(
+  :title => 'Hawaiian BBQ Sandwich Sale',
+  :body => 'Another test.',
+  :description => 'This is the Possum Creek Mud Run near Ray City, GA. It will happen and be awesome. Many Moody AFB personnel will probably be there.',
+  :slug => 'hawaiian-bbq-sandwich-sale',
+  :banner_image_url => 'https://images.pexels.com/photos/951382/pexels-photo-951382.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+  :author_id => '1',
+  :published => 'true',
+  :featured => 'true',
+  :published_at => '2018-09-02',
+)
+
+Event.create!(
+  :title => 'Habitat for Humanity Birdhouse Auction',
+  :body => 'Test 4.',
+  :description => 'This is the Possum Creek Mud Run near Ray City, GA. It will happen and be awesome. Many Moody AFB personnel will probably be there.',
+  :slug => 'habitat-for-humanity-birdhouse-auction',
+  :banner_image_url => 'https://images.pexels.com/photos/675764/pexels-photo-675764.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+  :author_id => '1',
+  :published => 'true',
+  :featured => 'true',
+  :published_at => '2018-08-24',
 )

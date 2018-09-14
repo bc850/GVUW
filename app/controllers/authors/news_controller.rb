@@ -5,7 +5,7 @@ module Authors
     # GET /news
     # GET /news.json
     def index
-      @news = current_author.news.most_recent
+      @news = current_author.news.most_recent.list_for(params[:page], params[:tag])
     end
 
     # GET /news/1
@@ -80,7 +80,7 @@ module Authors
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def news_params
-        params.require(:news).permit(:title, :body, :description, :banner_image_url, :author_id)
+        params.require(:news).permit(:title, :body, :description, :banner_image_url, :author_id, :tag_list, :featured)
       end
   end
 end

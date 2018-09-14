@@ -3,13 +3,19 @@ module Home
     # GET /news
     # GET /news.json
     def index
-      @news = News.most_recent.published.paginate(:page => params[:page], :per_page => 3)
+      @news = news_prefix.list_for(params[:page], params[:tag])
     end
 
     # GET /news/1
     # GET /news/1.json
     def show
-      @news = News.friendly.find(params[:id])
+      @news = news_prefix.friendly.find(params[:id])
+    end
+
+    private
+
+    def news_prefix
+      News.published
     end
   end
 end

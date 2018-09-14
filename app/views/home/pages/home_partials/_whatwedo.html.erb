@@ -1,0 +1,31 @@
+<div class="whatwedo container mt-3">
+  <div class="text-center">
+    <p class="mt-4">
+      Our mission at the Greater Valdosta United Way is to create positive
+      change by bringing resources together to improve people's lives in our
+      communities. We start with individuals just like you and add the magic of
+      volunteer support, corporate matching gifts, and grant dollars. When combined,
+      these resources can create real change in our region. Your gift stays
+      local, making a difference in Berrien, Brooks, Echols, Lanier, and
+      Lowndes counties. That&#39;s the United Way!
+      <%= link_to "View our impact >", root_path %>
+    </p>
+  </div>
+  <div class="news_container pb-5">
+    <div class="row">
+      <% @news.each do |news| %>
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-topper" style="background-image: url(<%= news.banner_image_url %>);"></div>
+            <div class="card-body">
+              <h4 class="card-title"><%= news.title %></h4>
+              <%= link_to news do %>
+                <p class="card-text"><%= truncate(news.description, length: 130) %></p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

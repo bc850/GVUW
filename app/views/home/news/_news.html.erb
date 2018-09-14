@@ -1,12 +1,15 @@
-<div class="col-md-4 col-sm-6">
+<div class="col-lg-4 col-sm-6">
   <div class="card">
-    <div class="card-topper" style="background-image: url(<%= news.banner_image_url %>);">
-    </div>
+    <%= link_to news do %>
+      <div class="card-topper" style="background-image: url(<%= news.banner_image_url %>);"></div>
+    <% end %>
     <div class="card-block">
       <h4 class="card-title"><%= link_to news.title, news %></h4>
+      <p class="tags"><%= raw news.tags.map { |t| link_to t.name, news_index_path(tag: t.name) }.join(', ') %></p>
       <p class="published-date"><%= news.display_day_published %></p>
-      <p class="card-text"><%= truncate(news.description, length: 130) %></p>
-      <%= link_to 'Read', news, class: 'btn btn-primary' %>
+      <%= link_to news do %>
+        <p class="card-text"><%= truncate(news.description, length: 130) %></p>
+      <% end %>
     </div>
   </div>
 </div>

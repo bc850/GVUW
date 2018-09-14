@@ -2,7 +2,7 @@
 #
 # Table name: authors
 #
-#  id                     :integer          not null, primary key
+#  id                     :bigint(8)        not null, primary key
 #  name                   :string
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
@@ -16,6 +16,7 @@
 #  last_sign_in_ip        :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  bio                    :text
 #
 
 class Author < ApplicationRecord
@@ -24,4 +25,19 @@ class Author < ApplicationRecord
   devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable
 
   has_many :news
+  has_many :events
+
+  validates_presence_of :name, on: :update
+
+  def change_password(attrs)
+    update(password: attrs[:new_password], password_confirmation: attrs[:new_password_confirmation])
+  end
+
+  def display_name
+    if name.present?
+      name
+    else
+      "Author"
+    end
+  end
 end

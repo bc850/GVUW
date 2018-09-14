@@ -1,0 +1,283 @@
+@import "bootstrap";
+
+@font-face {
+  font-family: "League Gothic Regular";
+  src: url("https://s3.amazonaws.com/united-way-greater-valdosta/fonts/LeagueGothic-Regular.otf");
+}
+
+[class*="fa-"] {
+  font-size: 128px;
+  color: #333333;
+  text-decoration: none;
+}
+.hero {
+  -webkit-background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 600px;
+  margin-top: -50px;
+  .hero_row {
+    height: 600px;
+    h1, p {
+      color: #fff !important;
+    }
+    h1 {
+      font-size: 45px;
+    }
+    p {
+      font-size: 30px;
+    }
+  }
+}
+.counters {
+  background-color: #fff;
+  padding-top: 75px;
+  padding-bottom: 90px;
+  .campaign, .partners {
+    margin-top: 75px;
+  }
+  .number_counter {
+    span {
+      font-size: 35px;
+    }
+    p {
+      font-size: 24px;
+    }
+  }
+}
+.overlay {
+  #navi-parent {
+    width: 250px;
+    height: 50px;
+    position: relative;
+  }
+  #navi {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -25px;
+    left: 0;
+    z-index: 10;
+    background-color: #09538F;
+    h1 {
+      font-family: 'Oswald', sans-serif;
+      text-align: center;
+      color: #fff !important;
+      text-transform: uppercase;
+      font-size: 40px;
+    }
+  }
+}
+.whatwedo {
+  p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+  }
+  .news_container {
+    margin-top: 60px;
+    .card {
+      border: none;
+      border-radius: 0;
+      height: 400px;
+      margin-bottom: 20px;
+      background-color: white;
+      .card-topper {
+        height: 200px;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+      }
+      .card-body {
+        padding: 10px;
+        .card-title {
+          font-size: 1.3rem;
+          margin-bottom: 0.3rem;
+          a {
+            color: black;
+            text-decoration: none;
+          }
+        }
+        .tags {
+          margin-bottom: 0;
+          a {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px !important;
+          }
+        }
+        .published-date {
+          font-size: 0.7rem;
+          color: #787878 !important;
+          font-weight: 300;
+          margin-top: 0.3rem;
+          margin-bottom: 0.3rem;
+        }
+        .card-text {
+          font-size: 0.9rem !important;
+        }
+      }
+    }
+  }
+}
+.events_partial {
+  background-color: #fff;
+  .events_overlay {
+    #navi-parent {
+      width: 250px;
+      height: 50px;
+      position: relative;
+    }
+    #navi {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: -25px;
+      left: 0;
+      z-index: 10;
+      background-color: #09538F;
+      h1 {
+        font-family: 'Oswald', sans-serif;
+        text-align: center;
+        color: #fff !important;
+        text-transform: uppercase;
+        font-size: 40px;
+      }
+    }
+  }
+  h1 {
+    font-size: 40px;
+  }
+}
+.focusareas {
+  h1 {
+    font-size: 40px;
+  }
+  p {
+    font-size: 18px;
+  }
+  .econ, .heart {
+    margin-top: 45px;
+  }
+}
+.getinvolved {
+  h1 {
+    font-size: 40px;
+  }
+  .card {
+    .card-topper {
+      height: 200px;
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+    h2 {
+      font-size: 25px;
+    }
+    p {
+      font-size: 18px;
+    }
+  }
+  .advocate, .volunteer {
+    margin-top: 45px;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .focusareas {
+    .econ, .heart {
+      margin-top: 0;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .hero {
+    .hero_row {
+      h1 {
+        font-size: 85px;
+      }
+      p {
+        font-size: 35px;
+      }
+    }
+  }
+  .counters {
+    .number_counter {
+      span {
+        font-size: 50px;
+      }
+      p {
+        font-size: 18px;
+      }
+    }
+  }
+  .whatwedo {
+    .card {
+      height: 420px;
+    }
+  }
+  .getinvolved {
+    .card {
+      .card-topper {
+        height: 375px;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .hero {
+    height: 660px;
+    .hero_row {
+      height: 600px;
+      h1 {
+        font-size: 125px;
+      }
+      p {
+        font-size: 40px;
+      }
+    }
+  }
+  .counters {
+    .campaign, .partners {
+      margin-top: 0;
+    }
+  }
+  .whatwedo {
+    .card {
+      height: 415px;
+    }
+    p {
+      font-size: 16px;
+    }
+  }
+  .events {
+    h1 {
+      font-size: 55px;
+    }
+  }
+  .focusareas {
+    h1 {
+      font-size: 55px;
+    }
+    p {
+      font-size: 24px;
+    }
+  }
+  .getinvolved {
+    h1 {
+      font-size: 55px;
+    }
+    .card {
+      .card-topper {
+        height: 200px;
+      }
+    }
+    .advocate, .volunteer {
+      margin-top: 0;
+    }
+  }
+}
+
+@include media-breakpoint-up(xl) {
+
+}

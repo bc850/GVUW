@@ -1,4 +1,4 @@
 <% provide(:page_title, "Edit #{@news.title}") %>
-<% provide(:author, "active") %>
+<% provide(:author_news, "active") %>
 
 <%= render 'form', news: @news, url: authors_news_url(@news) %>

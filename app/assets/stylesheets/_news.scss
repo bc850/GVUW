@@ -1,5 +1,4 @@
-$light-gray: #eee;
-$white: #fff;
+@import "colors";
 
 .news.index {
   .pagination {
@@ -12,7 +11,6 @@ $white: #fff;
     height: 400px;
     margin-bottom: 20px;
     background-color: white;
-    border-bottom: 1px solid black;
     .card-topper {
       height: 200px;
       width: 100%;
@@ -23,7 +21,7 @@ $white: #fff;
       padding: 10px;
       .card-title {
         font-size: 1.3rem;
-        margin-bottom: 0;
+        margin-bottom: 0.3rem;
         a {
           color: black;
           text-decoration: none;
@@ -33,21 +31,19 @@ $white: #fff;
         margin-bottom: 0;
         a {
           font-family: 'Montserrat', sans-serif;
-          font-size: 12px;
+          font-size: 12px !important;
         }
       }
       .published-date {
-        font-size: 0.8rem;
-        color: #787878;
+        font-size: 0.7rem;
+        color: #787878 !important;
         font-weight: 300;
         margin-top: 0.3rem;
         margin-bottom: 0.3rem;
       }
       .card-text {
-        font-size: 0.9rem;
-        color: black;
+        font-size: 0.9rem !important;
       }
-
     }
   }
 }
@@ -55,11 +51,13 @@ $white: #fff;
 .news.edit, .news.new {
   .card {
     .card-block {
-      background-color: $light-gray;
+      height: 75px;
     }
     .card-title {
       margin-bottom: 0;
       font-size: 18px;
+      margin-left: 10px;
+      margin-top: 7px;
     }
     .list-group-item {
       padding: 10px;
@@ -80,6 +78,14 @@ $white: #fff;
 }
 
 .news.show {
+  .news_body p {
+    font-size: 18px !important;
+    font-weight: 400 !important;
+  }
+  p img {
+    width: 100%;
+    height: auto;
+  }
   .author-bio {
     background-color: white;
     padding: 15px 45px;
@@ -104,7 +110,7 @@ $white: #fff;
 .news.edit, .news.new {
   .card {
     .card-title {
-      font-size: 16px;
+      font-size: 24px;
     }
     .list-group-item {
       padding: 10px;
@@ -113,7 +119,7 @@ $white: #fff;
         background-color: $light-gray;
       }
       &:last-child {
-        background-color: $light-gray;
+        //background-color: $light-gray;
       }
     }
   }

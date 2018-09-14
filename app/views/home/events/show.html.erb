@@ -1,0 +1,46 @@
+<% provide(:page_title, @event.title) %>
+<% provide(:blog_active, "active") %>
+
+<div class="row d-flex justify-content-center">
+  <div class="container">
+    <div class="row">
+      <% if @event.registerable? %>
+        <div class="col-md-8">
+      <% else %>
+        <div class="col-md-8 col-md-offset-2">
+      <% end %>
+          <div class="card" style="width: 100%;">
+            <div class="card-block">
+              <div class="card-title ml-3 mt-2">
+                <h1><%= @event.title %></h1>
+              </div>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <p class="published mt-3"><%= @event.display_day_published %></p>
+              </li>
+              <li class="list-group-item">
+                <p class="tags mt-3"><%= raw @event.tags.map { |t| link_to t.name, events_path(tag: t.name) }.join(', ') %></p>
+              </li>
+              <li class="list-group-item">
+                <div class="event_body mt-3">
+                  <div class="banner_image">
+                    <%= image_tag(@event.banner_image_url) %>
+                  </div>
+                  <br>
+                  <div>
+                    <%= @event.body.html_safe %>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      <% if @event.registerable? %>
+        <div class="col-md-4 text-center registerable">
+          <%= render partial: "home/registrations/form" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
