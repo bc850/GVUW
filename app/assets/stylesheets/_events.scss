@@ -135,6 +135,11 @@
   .events.index .card {
     height: 440px;
   }
+  .events.show {
+    .registerable {
+      margin-top: 15px;
+    }
+  }
 }
 
 /* Medium. Above 48em (768px) */

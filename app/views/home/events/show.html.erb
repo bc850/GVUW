@@ -11,7 +11,7 @@
       <% end %>
           <div class="card" style="width: 100%;">
             <div class="card-block">
-              <div class="card-title ml-3">
+              <div class="card-title ml-3 mt-2">
                 <h1><%= @event.title %></h1>
               </div>
             </div>
@@ -37,7 +37,7 @@
           </div>
         </div>
       <% if @event.registerable? %>
-        <div class="col-md-4 text-center">
+        <div class="col-md-4 text-center registerable">
           <%= render partial: "home/registrations/form" %>
         </div>
       <% end %>
