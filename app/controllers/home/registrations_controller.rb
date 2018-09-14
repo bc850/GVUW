@@ -2,19 +2,18 @@ module Home
   class RegistrationsController < HomeController
     before_action :set_event
 
-    def new
-      @event = Event.find params[:event_id]
-      @registration = @event.registration.new
-    end
-
     def create
       @registration = @event.registrations.create(registration_params)
       @registration.save
 
-      if @registration.save
-        redirect_to event_path(@event)
-      else
-        render 'new'
+      respond_to do |format|
+        if @registration.save
+          format.html { redirect_to event_path(@event), notice: 'You have successfully registered!'}
+          format.json { render :show, status: :created, location: @event }
+        else
+          format.html { render :new }
+          format.json { render json: @event.errors, status: :unprocessable_entity }
+        end
       end
     end
 
