@@ -9,17 +9,31 @@
       <% else %>
         <div class="col-md-8 col-md-offset-2">
       <% end %>
-        <h1><%= @event.title %></h1>
-        <div class="border-top border-bottom">
-          <p class="published mt-3"><%= @event.display_day_published %></p>
+          <div class="card">
+            <div class="card-block">
+              <div class="card-title">
+                <h1><%= @event.title %></h1>
+              </div>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <div class="border-top border-bottom">
+                  <p class="published mt-3"><%= @event.display_day_published %></p>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="border-bottom">
+                  <p class="tags mt-3"><%= raw @event.tags.map { |t| link_to t.name, events_path(tag: t.name) }.join(', ') %></p>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="event_body mt-3">
+                  <%= @event.body.html_safe %>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="border-bottom">
-          <p class="tags mt-3"><%= raw @event.tags.map { |t| link_to t.name, events_path(tag: t.name) }.join(', ') %></p>
-        </div>
-        <div class="event_body mt-3">
-          <%= @event.body.html_safe %>
-        </div>
-      </div>
       <% if @event.registerable? %>
         <div class="col-md-4 text-center">
           <%= render partial: "home/registrations/form" %>
