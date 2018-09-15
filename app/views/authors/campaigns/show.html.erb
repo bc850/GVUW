@@ -1,10 +1,10 @@
-<% provide(:page_title, @campaign.year) %> Annual Campaign
+<% provide(:page_title, "#{@campaign.year} Annual Campaign") %>
 <% provide(:author, "active") %>
 
 <div class="row">
   <div>
-    <%= link_to 'Edit', edit_authors_event_path(@campaign), class: 'btn btn-sm btn-warning' %>
-    <%= link_to 'Remove', authors_event_path(@campaign), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
+    <%= link_to 'Edit', edit_authors_campaign_path(@campaign), class: 'btn btn-sm btn-warning' %>
+    <%= link_to 'Remove', authors_campaign_path(@campaign), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
   </div>
   <div class="col-md-8 col-md-offset-2">
     <h1><%= @campaign.year %> Annual Campaign</h1>

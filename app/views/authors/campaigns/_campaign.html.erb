@@ -1,5 +1,5 @@
 <tr>
-  <td><%= link_to campaign.year, authors_campaign_path(campaign) %> Annual Campaign</td>
+  <td><%= link_to "#{campaign.year} Annual Campaign", authors_campaign_path(campaign) %></td>
   <td></td>
   <% if campaign.published? %>
     <td><%= link_to 'Unpublish', unpublish_authors_campaign_path(campaign), method: :put, class: 'btn btn-sm btn-primary' %></td>
