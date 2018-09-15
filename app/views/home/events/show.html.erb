@@ -20,9 +20,6 @@
                 <p class="published mt-3"><%= @event.display_day_published %></p>
               </li>
               <li class="list-group-item">
-                <p class="tags mt-3"><%= raw @event.tags.map { |t| link_to t.name, events_path(tag: t.name) }.join(', ') %></p>
-              </li>
-              <li class="list-group-item">
                 <div class="event_body mt-3">
                   <div class="banner_image">
                     <%= image_tag(@event.banner_image_url) %>
@@ -32,6 +29,9 @@
                     <%= @event.body.html_safe %>
                   </div>
                 </div>
+              </li>
+              <li class="list-group-item">
+                <p class="tags mt-3"><%= raw @event.tags.map { |t| link_to t.name, events_path(tag: t.name) }.join(', ') %></p>
               </li>
             </ul>
           </div>
