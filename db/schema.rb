@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_13_171924) do
+ActiveRecord::Schema.define(version: 2018_09_15_061838) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,19 @@ ActiveRecord::Schema.define(version: 2018_09_13_171924) do
     t.text "bio"
     t.index ["email"], name: "index_authors_on_email", unique: true
     t.index ["reset_password_token"], name: "index_authors_on_reset_password_token", unique: true
+  end
+
+  create_table "campaigns", force: :cascade do |t|
+    t.integer "year"
+    t.decimal "total"
+    t.decimal "percentage"
+    t.text "body"
+    t.string "slug"
+    t.bigint "author_id"
+    t.boolean "published"
+    t.datetime "published_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "events", force: :cascade do |t|
@@ -112,6 +125,14 @@ ActiveRecord::Schema.define(version: 2018_09_13_171924) do
     t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
+  create_table "true_rows", force: :cascade do |t|
+    t.bigint "campaign_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["campaign_id"], name: "index_true_rows_on_campaign_id"
+  end
+
   add_foreign_key "news", "authors"
   add_foreign_key "registrations", "events"
+  add_foreign_key "true_rows", "campaigns"
 end
