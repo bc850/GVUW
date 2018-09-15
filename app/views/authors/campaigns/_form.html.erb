@@ -34,6 +34,12 @@
             </li>
             <li class="list-group-item">
               <div class="field">
+                <%= form.label :banner_image_url %>
+                <%= form.text_field :banner_image_url, class: 'form-control' %>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="field">
                 <%= form.label :total %>
                 <%= form.text_field :total, class: 'form-control' %>
               </div>
@@ -42,6 +48,12 @@
               <div class="field">
                 <%= form.label :percentage %>
                 <%= form.text_field :percentage, class: 'form-control' %>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="field">
+                <%= form.label :description %>
+                <%= form.text_area :description, class: 'form-control' %>
               </div>
             </li>
             <li class="list-group-item">
