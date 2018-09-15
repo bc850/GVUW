@@ -1,6 +1,6 @@
 module Authors
   class CampaignsController < AuthorController
-    before_action :set_event, only: [:show, :edit, :update, :destroy, :publish, :unpublish]
+    before_action :set_campaign, only: [:show, :edit, :update, :destroy, :publish, :unpublish]
 
     def index
       @campaigns = current_author.campaigns.most_recent.list_for(params[:page], params[:tag])
