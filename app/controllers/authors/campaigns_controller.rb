@@ -65,7 +65,7 @@ module Authors
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def campaign_params
-        params.require(:campaign).permit(:year, :total, :percentage, :body, :author_id, :slug, :tag_list, :published, :published_at)
+        params.require(:campaign).permit(:year, :total, :campaign_goal, :percentage, :body, :author_id, :slug, :tag_list, :published, :published_at)
       end
 
   end
