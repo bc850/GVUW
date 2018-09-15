@@ -13,7 +13,6 @@ Rails.application.routes.draw do
       put 'unpublish' => 'events#unpublish', on: :member
     end
     resources :campaigns do
-      resources :true_rows
       put 'publish' => 'campaigns#publish', on: :member
       put 'unpublish' => 'campaigns#unpublish', on: :member
     end
