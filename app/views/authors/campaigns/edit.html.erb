@@ -1,0 +1,4 @@
+<% provide(:page_title, "Edit #{@campaign.year} Campaign") %>
+<% provide(:author_event, "active") %>
+
+<%= render 'form', news: @campaign, url: authors_campaign_url(@campaign) %>

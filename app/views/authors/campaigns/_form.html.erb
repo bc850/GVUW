@@ -1,0 +1,70 @@
+<%= form_with(url: url, model: campaign, local: true) do |form| %>
+  <% if campaign.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(campaign.errors.count, "error") %> prohibited this news from being saved:</h2>
+
+      <ul>
+      <% campaign.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card" style="width: 20rem;">
+        <div class="card-block">
+          <% if @campaign.new_record? %>
+            <h4 class="card-title">New Campaign</h4>
+          <% else %>
+            <h4 class="card-title">
+              <b>Edit</b>
+              <span class="thin-text"><%= @campaign.year %> Campaign</span>
+            </h4>
+          <% end %>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <div class="field">
+              <%= form.label :year %>
+              <%= form.text_field :year, class: 'form-control' %>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="field">
+              <%= form.label :total %>
+              <%= form.text_field :total, class: 'form-control' %>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="field">
+              <%= form.label :percentage %>
+              <%= form.text_field :percentage, class: 'form-control' %>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="field">
+              <%= form.label 'Tags' %>
+              <%= form.text_area :tag_list, class: 'form-control' %>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="actions">
+              <%= form.submit "Save Campaign", class: "btn btn-success btn-block" %>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <% if @campaign.persisted? %>
+        <%= link_to 'Show', @campaign %> |
+      <% end %>
+      <%= link_to 'Back', authors_campaigns_path %>
+    </div>
+    <div class="col-md-8">
+      <div class="field">
+        <%= form.text_area :body %>
+      </div>
+    </div>
+  </div>
+<% end %>
