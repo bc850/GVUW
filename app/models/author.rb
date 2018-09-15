@@ -26,6 +26,7 @@ class Author < ApplicationRecord
 
   has_many :news
   has_many :events
+  has_many :campaigns
 
   validates_presence_of :name, on: :update
 

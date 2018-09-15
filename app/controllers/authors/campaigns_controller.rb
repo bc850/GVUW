@@ -7,7 +7,7 @@ module Authors
     end
 
     def new
-      @campaigns = current_author.campaigns.new
+      @campaign = current_author.campaigns.new
     end
 
     def show

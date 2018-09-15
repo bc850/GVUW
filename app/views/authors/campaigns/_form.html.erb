@@ -1,10 +1,10 @@
-<%= form_with(url: url, model: campaign, local: true) do |form| %>
-  <% if campaign.errors.any? %>
+<%= form_with(url: url, model: @campaign, local: true) do |form| %>
+  <% if @campaign.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(campaign.errors.count, "error") %> prohibited this news from being saved:</h2>
+      <h2><%= pluralize(@campaign.errors.count, "error") %> prohibited this news from being saved:</h2>
 
       <ul>
-      <% campaign.errors.full_messages.each do |message| %>
+      <% @campaign.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>

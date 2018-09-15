@@ -20,7 +20,7 @@ class Campaign < ApplicationRecord
 
   def should_generate_new_friendly_id?
     # if you update the title, you want to update the slug as well
-    title_changed?
+    year_changed?
   end
 
   def display_day_published
