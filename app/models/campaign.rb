@@ -1,5 +1,4 @@
 class Campaign < ApplicationRecord
-  has_many :true_rows
   belongs_to :author
 
   acts_as_taggable # Alias for acts_as_taggable_on :tags
