@@ -23,6 +23,9 @@ Rails.application.routes.draw do
     resources :events do #-> url.com/events/:id
       resources :registrations #-> url.com/events/:event_id/registrations/
     end
+    resources :campaigns do
+      resources :true_rows
+    end
   end
   root to: "home/pages#home"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
