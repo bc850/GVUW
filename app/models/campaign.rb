@@ -18,6 +18,8 @@ class Campaign < ApplicationRecord
     recent_paginate(page).with_tag(tag)
   end
 
+  scope :year_desc, -> { order(year: :desc) }
+
   def should_generate_new_friendly_id?
     # if you update the title, you want to update the slug as well
     year_changed?
