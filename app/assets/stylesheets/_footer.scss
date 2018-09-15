@@ -1,2 +1,54 @@
 @import "bootstrap";
 @import "colors";
+
+.footer {
+  background-color: #11548D;
+  h1, h2, h3, h4, h5, h6, p, span, .fa {
+    color: #fff !important;
+  }
+  .fa {
+    font-size: 40px;
+  }
+  .terms_policy {
+    a {
+      color: #fff !important;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #ff8000 !important;
+    }
+  }
+  .middle_col {
+    margin-top: 30px;
+    img {
+      width: 175px;
+      height: auto;
+    }
+  }
+  .bottom_col {
+    margin-top: 30px;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+
+}
+
+@include media-breakpoint-up(md) {
+  .footer {
+    .middle_col {
+      margin-top: 0;
+    }
+    .bottom_col {
+      margin-top: 0;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+
+}
+
+@include media-breakpoint-up(xl) {
+
+}
