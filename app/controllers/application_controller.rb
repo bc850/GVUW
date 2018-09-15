@@ -6,6 +6,6 @@ class ApplicationController < ActionController::Base
   before_action :set_campaign_nav
 
   def set_campaign_nav
-    @campaign_nav = Campaign.published.year_desc
+    @campaign_nav = Campaign.published.year_desc.friendly
   end
 end

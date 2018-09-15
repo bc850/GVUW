@@ -55,8 +55,11 @@
             <a class="dropdown-item " href="#">History</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item " href="#">Leadership & Staff</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="/campaigns/<%= @campaign_nav.first.id %>"><%= @campaign_nav.first.year %> Annual Campaign</a>
+            <% if @campaign_nav.empty? %>
+            <% else %>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/campaigns/<%= @campaign_nav.first.id %>"><%= @campaign_nav.first.year %> Annual Campaign</a>
+            <% end %>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item " href="#">Partners</a>
           </div>
