@@ -12,6 +12,11 @@ Rails.application.routes.draw do
       put 'publish' => 'events#publish', on: :member
       put 'unpublish' => 'events#unpublish', on: :member
     end
+    resources :campaigns do
+      resources :true_rows
+      put 'publish' => 'campaigns#publish', on: :member
+      put 'unpublish' => 'campaigns#unpublish', on: :member
+    end
   end
 
   scope module: 'home' do
@@ -23,9 +28,7 @@ Rails.application.routes.draw do
     resources :events do #-> url.com/events/:id
       resources :registrations #-> url.com/events/:event_id/registrations/
     end
-    resources :campaigns do
-      resources :true_rows
-    end
+    resources :campaigns
   end
   root to: "home/pages#home"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
