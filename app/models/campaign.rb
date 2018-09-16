@@ -39,4 +39,8 @@ class Campaign < ApplicationRecord
   def unpublish
     update(published: false, published_at: nil)
   end
+
+  def campaign_math
+    (total / campaign_goal) * 100
+  end
 end

@@ -10,6 +10,10 @@ module Home
     # GET /campaigns/1.json
     def show
       @campaign = campaign_prefix.friendly.find(params[:id])
+
+      # get the percentage for total collected / campaign goal
+      # used for progress bar width
+      @campaign_percentage = @campaign.campaign_math
     end
 
     private

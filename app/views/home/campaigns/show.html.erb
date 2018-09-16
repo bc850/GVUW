@@ -18,7 +18,16 @@
             <li class="list-group-item">
               <div class="campaign_body mt-3">
                 <div>
-                  <%= @campaign.body.html_safe %>
+                  <div>
+                    <p>Our <%= @campaign.year %> campaign goal is <%= number_to_currency(@campaign.campaign_goal) %></p>
+                    <p>We are currently at <%= number_to_percentage(@campaign_percentage, precision: 0) %> of our goal.</p>
+                  </div>
+                  <div class="progress mb-3" style="height: 40px;">
+                    <div class="progress-bar" role="progressbar" style="width: <%= number_to_percentage(@campaign_percentage) %>;" aria-valuenow="<%= @campaign_percentage %>" aria-valuemin="0" aria-valuemax="100"><%= number_to_currency(@campaign.total) %></div>
+                  </div>
+                  <div>
+                    <%= @campaign.body.html_safe %>
+                  </div>
                 </div>
               </div>
             </li>
