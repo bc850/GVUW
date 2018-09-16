@@ -15,7 +15,7 @@ module Authors
 
       respond_to do |format|
         if @member.save
-          format.html { redirect_to authors_board_member_path(@member), notice: 'Board Member was successfully created.' }
+          format.html { redirect_to authors_board_members_path, notice: 'Board Member was successfully created.' }
           format.json { render :show, status: :created, location: @member }
         else
           format.html { render :new }
@@ -27,7 +27,7 @@ module Authors
     def update
       respond_to do |format|
         if @member.update(board_member_params)
-          format.html { redirect_to authors_campaign_path(@member), notice: 'Board Member was successfully updated.' }
+          format.html { redirect_to edit_authors_board_member_path(@member), notice: 'Board Member was successfully updated.' }
           format.json { render :show, status: :ok, location: @member }
         else
           format.html { render :edit }
@@ -50,8 +50,8 @@ module Authors
       @member = BoardMember.find(params[:id])
     end
 
-    def member_params
-      params.require(:member).permit(:name, :member_image, :business, :position, :commencement_year, :roll_off_year, :rolled_off)
+    def board_member_params
+      params.require(:board_member).permit(:name, :member_image, :business, :position, :commencement_year, :roll_off_year, :rolled_off)
     end
 
   end

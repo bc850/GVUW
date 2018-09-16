@@ -3,9 +3,7 @@
   <div class="card-block">
     <h4 class="card-title"><%= member.name %></h4>
     <p class="card-text"><%= member.business %></p>
-    <% if !member.position.empty? %>
-      <p class="card-text"><%= member.position %></p>
-    <% end %>
+    <p class="card-text"><%= member.position %></p>
     <p class="card-text">
       <%= member.commencement_year %>
       <% if member.rolled_off? %>

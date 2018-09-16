@@ -1,0 +1,13 @@
+<% provide(:page_title, "Edit Board Members") %>
+<% provide(:board_member, "active") %>
+
+<div class="row">
+  <div class="col-md-6">
+    <%= render 'form', news: @member, url: authors_board_members_url %>
+  </div>
+  <div class="col-md-6">
+    <div class="field">
+      <%= render 'single_member' %>
+    </div>
+  </div>
+</div>
