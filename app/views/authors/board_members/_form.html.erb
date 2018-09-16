@@ -17,7 +17,7 @@
         <div class="card" style="width: 100%;">
           <div class="card-block">
             <% if @member.new_record? %>
-              <h4 class="card-title">New Campaign</h4>
+              <h4 class="card-title">New Board Member</h4>
             <% else %>
               <h4 class="card-title">
                 <b>Edit</b>
@@ -59,7 +59,7 @@
             <li class="list-group-item">
               <div class="field">
                 <%= form.label :roll_off_year %>
-                <%= form.text_area :roll_off_year, class: 'form-control' %>
+                <%= form.text_field :roll_off_year, class: 'form-control' %>
               </div>
             </li>
             <li class="list-group-item">
@@ -79,7 +79,7 @@
       </div>
       <div class="col-md-6">
         <div class="field">
-          <%= render @member %>
+          <%= render 'single_member' %>
         </div>
       </div>
     </div>
