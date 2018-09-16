@@ -11,6 +11,8 @@
         <%= board_member.commencement_year %>
         <% if board_member.roll_off_year != nil %>
           - <%= board_member.roll_off_year %>
+        <% else %>
+          - Current
         <% end %>
       </p>
     </div>

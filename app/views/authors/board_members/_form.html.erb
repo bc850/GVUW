@@ -1,10 +1,10 @@
-<%= form_with(url: url, model: @member, local: true) do |form| %>
-  <% if @member.errors.any? %>
+<%= form_with(url: url, model: @board_member, local: true) do |form| %>
+  <% if @board_member.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@member.errors.count, "error") %> prohibited this news from being saved:</h2>
+      <h2><%= pluralize(@board_member.errors.count, "error") %> prohibited this news from being saved:</h2>
 
       <ul>
-      <% @member.errors.full_messages.each do |message| %>
+      <% @board_member.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -13,12 +13,12 @@
 
   <div class="card" style="width: 100%;">
     <div class="card-block">
-      <% if @member.new_record? %>
+      <% if @board_member.new_record? %>
         <h4 class="card-title">New Board Member</h4>
       <% else %>
         <h4 class="card-title">
           <b>Edit</b>
-          <span class="thin-text"><%= @member.name %>'s Record</span>
+          <span class="thin-text"><%= @board_member.name %>'s Record</span>
         </h4>
       <% end %>
     </div>

@@ -1,13 +1,13 @@
 <div class="card">
-  <div class="card-topper" style="background-image: url(<%= @member.member_image %>);"></div>
+  <div class="card-topper" style="background-image: url(<%= @board_member.member_image %>);"></div>
   <div class="card-block">
-    <h4 class="card-title"><%= @member.name %></h4>
-    <p class="card-text"><%= @member.business %></p>
-    <p class="card-text"><%= @member.position %></p>
+    <h4 class="card-title"><%= @board_member.name %></h4>
+    <p class="card-text"><%= @board_member.business %></p>
+    <p class="card-text"><%= @board_member.position %></p>
     <p class="card-text">
-      <%= @member.commencement_year %>
-      <% if @member.rolled_off? %>
-        <span> - <%= @member.roll_off_year %></span>
+      <%= @board_member.commencement_year %>
+      <% if @board_member.rolled_off? %>
+        <span> - <%= @board_member.roll_off_year %></span>
       <% end %>
     </p>
   </div>
