@@ -42,6 +42,12 @@
         </div>
       </li>
       <li class="list-group-item">
+        <div class="field">
+          <%= form.label :description %>
+          <%= form.text_area :description, class: 'form-control' %>
+        </div>
+      </li>
+      <li class="list-group-item">
         <div class="actions">
           <%= form.submit "Save Staff Member", class: "btn btn-success btn-block" %>
         </div>
