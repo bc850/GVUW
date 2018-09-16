@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  business: MyString
+  position: MyString
+  commencement_year: 1
+  roll_off_year: 1
+  rolled_off: false
+
+two:
+  name: MyString
+  business: MyString
+  position: MyString
+  commencement_year: 1
+  roll_off_year: 1
+  rolled_off: false
