@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card-topper" style="background-image: url(<%= member.member_image %>);"></div>
+  <div class="card-block">
+    <h4 class="card-title"><%= member.name %></h4>
+    <p class="card-text"><%= member.business %></p>
+    <% if !member.position.empty? %>
+      <p class="card-text"><%= member.position %></p>
+    <% end %>
+    <p class="card-text">
+      <%= member.commencement_year %>
+      <% if member.rolled_off? %>
+        <span> - <%= member.roll_off_year %></span>
+      <% end %>
+    </p>
+  </div>
+</div>
