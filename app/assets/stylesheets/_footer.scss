@@ -27,6 +27,25 @@
   }
   .bottom_col {
     margin-top: 30px;
+    h1 {
+      color: #ff8000 !important;
+    }
+    ul {
+      margin:0;
+      padding:0;
+      text-align: center;
+      list-style: none;
+      li {
+        a {
+          color: #fff !important;
+        }
+      }
+      li {
+        a:hover {
+          color: #ff8000 !important;
+        }
+      }
+    }
   }
 }
 

@@ -79,9 +79,21 @@
 }
 
 .campaigns.show {
-  .event_body p {
-    font-size: 18px !important;
-    font-weight: 400 !important;
+  .campaign_body {
+    .image_class {
+      img {
+        border: 3px solid #11548D;
+        width: 100%;
+        height: auto;
+      }
+    }
+    p {
+      font-size: 24px !important;
+      font-weight: 400 !important;
+    }
+    .big-font {
+      font-size: 18px !important;
+    }
   }
   .registerable {
     margin-top: 15px;
@@ -149,6 +161,14 @@
   .campaigns.show {
     .registerable {
       margin-top: 0;
+    }
+    .campaign_body {
+      .image_class {
+        img {
+          width: 400px;
+          height: auto;
+        }
+      }
     }
   }
 }
