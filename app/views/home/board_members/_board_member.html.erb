@@ -1,0 +1,18 @@
+<div class="col-lg-4 col-sm-6">
+  <div class="card">
+    <div class="card-topper" style="background-image: url(<%= board_member.member_image %>);"></div>
+    <div class="card-block">
+      <h4 class="card-title"><%= board_member.name %></h4>
+      <p class="card-text"><%= board_member.business %></p>
+      <% if board_member.position != nil %>
+        <p class="card-text"><%= board_member.position %></p>
+      <% end %>
+      <p class="card-text">
+        <%= board_member.commencement_year %>
+        <% if board_member.roll_off_year != nil %>
+          - <%= board_member.roll_off_year %>
+        <% end %>
+      </p>
+    </div>
+  </div>
+</div>

@@ -29,6 +29,7 @@ Rails.application.routes.draw do
       resources :registrations #-> url.com/events/:event_id/registrations/
     end
     resources :campaigns
+    get 'board_members' => 'board_members#index'#, as: :board_members
   end
   root to: "home/pages#home"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
