@@ -1,0 +1,6 @@
+<tr>
+  <td><%= link_to staff_member.name, edit_authors_staff_member_path(staff_member) %></td>
+  <td></td>
+  <td><%= link_to 'Edit', edit_authors_staff_member_path(staff_member), class: 'btn btn-sm btn-warning' %></td>
+  <td><%= link_to 'Remove', authors_staff_member_path(staff_member), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %></td>
+</tr>
