@@ -6,6 +6,9 @@
   h1, h2, h3, h4, h5, h6, p, span, .fa {
     color: #fff !important;
   }
+  h3 {
+    font-weight: 400;
+  }
   .fa {
     font-size: 40px;
   }
@@ -15,35 +18,37 @@
       text-decoration: none;
     }
     a:hover {
-      color: #ff8000 !important;
+      color: #F7B13B !important;
     }
   }
   .middle_col {
-    margin-top: 30px;
+    margin-top: 60px;
+    margin-bottom: 60px;
     img {
       width: 175px;
       height: auto;
     }
   }
   .bottom_col {
-    margin-top: 30px;
-    h1 {
-      color: #ff8000 !important;
-    }
-    ul {
-      margin:0;
-      padding:0;
-      text-align: center;
-      list-style: none;
-      li {
-        a {
-          color: #fff !important;
-        }
+    //margin-top: 30px;
+  }
+  h3 {
+    color: #F7B13B !important;
+  }
+  ul {
+    margin:0;
+    padding:0;
+    text-align: center;
+    list-style: none;
+    li {
+      a {
+        color: #fff !important;
       }
-      li {
-        a:hover {
-          color: #ff8000 !important;
-        }
+    }
+    li {
+      a:hover {
+        color: #F7B13B !important;
+        text-decoration: none;
       }
     }
   }
@@ -59,7 +64,9 @@
       margin-top: 0;
     }
     .bottom_col {
-      margin-top: 0;
+      h3 {
+        margin-top: -5px;
+      }
     }
   }
 }
