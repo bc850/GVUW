@@ -3,10 +3,10 @@
 # Table name: registrations
 #
 #  id         :bigint(8)        not null, primary key
-#  event_id   :integer
 #  name       :string
 #  phone      :string
 #  email      :string
+#  event_id   :bigint(8)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
