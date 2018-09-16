@@ -27,7 +27,7 @@ module Authors
     def update
       respond_to do |format|
         if @board_member.update(board_member_params)
-          format.html { redirect_to edit_authors_board_member_path(@board_member), notice: 'Board Member was successfully updated.' }
+          format.html { redirect_to authors_board_members_path, notice: 'Board Member was successfully updated.' }
           format.json { render :show, status: :ok, location: @board_member }
         else
           format.html { render :edit }

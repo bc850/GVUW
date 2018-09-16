@@ -8,6 +8,8 @@
       <%= board_member.commencement_year %>
       <% if board_member.rolled_off? %>
         <span> - <%= board_member.roll_off_year %></span>
+      <% else %>
+        - Current
       <% end %>
     </p>
   </div>
