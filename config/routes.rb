@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       put 'publish' => 'campaigns#publish', on: :member
       put 'unpublish' => 'campaigns#unpublish', on: :member
     end
+    resources :board_members
   end
 
   scope module: 'home' do
