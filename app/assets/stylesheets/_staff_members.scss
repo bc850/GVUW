@@ -1,0 +1,106 @@
+@import "bootstrap";
+@import "colors";
+
+.staff_members.index {
+  .card {
+    border: none;
+    border-radius: 0;
+    height: 350px;
+    margin-bottom: 20px;
+    background-color: white;
+    .card-topper {
+      height: 200px !important;
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+    .card-block {
+      padding: 10px;
+      .card-title {
+        font-size: 1.3rem;
+        margin-bottom: 0.3rem;
+        a {
+          color: black;
+          text-decoration: none;
+        }
+      }
+      .card-text {
+        font-size: 0.9rem !important;
+      }
+    }
+  }
+}
+
+.staff_members.new {
+  .card {
+    border: none;
+    border-radius: 0;
+    margin-bottom: 20px;
+    background-color: white;
+    .card-topper {
+      height: 200px !important;
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+    .card-block {
+      padding: 10px;
+      .card-title {
+        font-size: 1.3rem;
+        margin-bottom: 0.3rem;
+        a {
+          color: black;
+          text-decoration: none;
+        }
+      }
+      .card-text {
+        font-size: 0.9rem !important;
+      }
+    }
+  }
+}
+
+.staff_members.edit {
+  .card {
+    border: none;
+    border-radius: 0;
+    margin-bottom: 20px;
+    background-color: white;
+    .card-topper {
+      height: 300px !important;
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+    .card-block {
+      padding: 10px;
+      .card-title {
+        font-size: 1.3rem;
+        margin-bottom: 0.3rem;
+        a {
+          color: black;
+          text-decoration: none;
+        }
+      }
+      .card-text {
+        font-size: 0.9rem !important;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(sm) {
+
+}
+
+@include media-breakpoint-up(md) {
+
+}
+
+@include media-breakpoint-up(lg) {
+
+}
+
+@include media-breakpoint-up(xl) {
+
+}
