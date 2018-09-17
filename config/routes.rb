@@ -31,6 +31,7 @@ Rails.application.routes.draw do
     end
     resources :campaigns
     get 'board_members' => 'board_members#index'#, as: :board_members
+    get 'staff_members' => 'staff_members#index'
   end
   root to: "home/pages#home"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
