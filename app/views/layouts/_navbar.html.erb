@@ -48,7 +48,7 @@
         <% else %>
           <li class="nav-item dropdown mr-2 ">
         <% end %>
-          <a class="<%= 'active' if current_page?(authors_news_index_path) %> nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="<%= 'active' if current_page?(authors_news_index_path) || current_page?(board_members_path) || current_page?(staff_members_path) || current_page?(campaign_path) %> nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             About
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -58,7 +58,7 @@
             <% if @campaign_nav.empty? %>
             <% else %>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="/campaigns/<%= @campaign_nav.first.id %>"><%= @campaign_nav.first.year %> Annual Campaign</a>
+              <%= link_to "#{@campaign_nav.first.year} Annual Campaign", campaign_path("#{@campaign_nav.first.id}"), class: "dropdown-item #{yield(:campaign_active)}" %>
             <% end %>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item " href="#">Partners</a>
