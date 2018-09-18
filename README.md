@@ -1,24 +1,10 @@
-# README
+# Greater Valdosta United Way Web Application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This website is for use by the Greater Valdosta United Way.
 
-Things you may want to cover:
+Written with:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  -Ruby on Rails
+  -Bootstrap 4.1.3
+  
+Hosted on a Heroku instance.
