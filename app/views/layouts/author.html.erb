@@ -19,7 +19,9 @@
   <body>
     <%= render 'layouts/navbar' %>
     <% if current_page?(root_path) ||
-        current_page?(why_live_united_path) %>
+        current_page?(why_live_united_path) ||
+        current_page?(our_work_path)
+    %>
       <%= yield %>
     <% else %>
       <div class="container <%= controller_name %> <%= action_name %>">

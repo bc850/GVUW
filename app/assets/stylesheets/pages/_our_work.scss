@@ -1,1 +1,25 @@
 @import "bootstrap";
+@import "util";
+
+
+
+
+
+
+
+
+
+@include media-breakpoint-up(md) {
+  .hero_overlay {
+    height: 600px;
+    margin-top: -50px;
+    .hero-info {
+      height: 600px;
+      padding-top: 150px;
+      padding-bottom: 20px;
+      h1 {
+        font-size: 72px;
+      }
+    }
+  }
+}
