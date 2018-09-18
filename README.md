@@ -4,7 +4,4 @@ This website is for use by the Greater Valdosta United Way.
 
 Written with:
 
-  -Ruby on Rails
-  -Bootstrap 4.1.3
-  
-Hosted on a Heroku instance.
+  Ruby v2.5.1, Rails v5.2.1, Bootstrap 4.1.3
