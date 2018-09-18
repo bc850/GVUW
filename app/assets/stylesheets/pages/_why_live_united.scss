@@ -1,0 +1,152 @@
+@import "bootstrap";
+
+.why-live-hero {
+  -webkit-background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 320px;
+  margin-top: -20px;
+  .hero-info {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    height: 320px;
+    padding: 20px 20px 20px 20px;
+    h1 {
+      margin-top: 40px;
+      font-size: 45px;
+      padding-left: 18px;
+      padding-top: 22px;
+      line-height: 0.9;
+      border-bottom: 4px solid #ffffff !important;
+      color: #ffffff !important;
+      background: url(https://s3.amazonaws.com/united-way-greater-valdosta/hero-title-corner.png) no-repeat top left;
+    }
+    p {
+      color: #ffffff !important;
+      font-size: 20px;
+    }
+  }
+  .dark-blue-bg {
+    background: rgba(0, 81, 145, 0.7);
+  }
+}
+.overlay1 {
+  background-color: #fff;
+  #navi-parent {
+    width: 475px;
+    height: 50px;
+    position: relative;
+  }
+  #navi {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 15px;
+    left: 0;
+    z-index: 10;
+    background-color: #09538F;
+    h2 {
+      font-family: 'Oswald', sans-serif;
+      text-align: center;
+      color: #fff !important;
+      text-transform: uppercase;
+      font-size: 32px !important;
+      margin-top: 6px;
+    }
+  }
+}
+.overlay2 {
+  background-color: #fff;
+  #navi-parent {
+    width: 225px;
+    height: 50px;
+    position: relative;
+  }
+  #navi {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -27px;
+    left: 0;
+    z-index: 10;
+    background-color: #09538F;
+    h2 {
+      font-family: 'Oswald', sans-serif;
+      text-align: center;
+      color: #fff !important;
+      text-transform: uppercase;
+      font-size: 32px !important;
+      margin-top: 6px;
+    }
+  }
+}
+.together {
+  background-color: #fff;
+  p {
+    font-size: 18px !important;
+  }
+}
+.pictures {
+  margin-bottom: 75px;
+  img {
+    width: 100%;
+    height: auto;
+  }
+  .spacing1 {
+    margin-top: 15px;
+  }
+}
+.our_impact {
+  background-color: #fff;
+  p {
+    font-size: 18px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .why-live-hero {
+    height: 600px;
+    margin-top: -50px;
+    .hero-info {
+      height: 600px;
+      padding-top: 150px;
+      padding-bottom: 20px;
+      h1 {
+        font-size: 82px;
+      }
+    }
+  }
+  .overlay1 {
+    #navi-parent {
+      width: 425px;
+      height: 55px;
+    }
+    #navi {
+      h2 {
+        font-size: 35px !important;
+      }
+    }
+  }
+  .overlay2 {
+    #navi-parent {
+      width: 225px;
+      height: 55px;
+    }
+    #navi {
+      h2 {
+        font-size: 35px !important;
+      }
+    }
+  }
+  .pictures {
+    .spacing1 {
+      margin-top: 0;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+
+}
