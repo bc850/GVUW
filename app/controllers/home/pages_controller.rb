@@ -22,5 +22,8 @@ module Home
 
     def why_live_united
     end
+
+    def our_work
+    end
   end
 end
