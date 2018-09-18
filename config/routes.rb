@@ -32,6 +32,7 @@ Rails.application.routes.draw do
     resources :campaigns
     get 'board_members' => 'board_members#index'#, as: :board_members
     get 'staff_members' => 'staff_members#index'
+    get 'why-live-united', to: 'pages#why_live_united'
   end
   root to: "home/pages#home"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

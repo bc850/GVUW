@@ -19,5 +19,8 @@ module Home
     def set_campaign
       @campaign = Campaign.published.most_recent
     end
+
+    def why_live_united
+    end
   end
 end

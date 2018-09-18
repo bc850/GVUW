@@ -16,7 +16,7 @@
             Our Impact
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Why Live United</a>
+            <%= link_to 'Why Live United', why_live_united_path, class: "dropdown-item #{yield(:why_live_united_active)}" %>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item " href="#">Our Work</a>
             <div class="dropdown-divider"></div>
@@ -52,9 +52,7 @@
             <div class="dropdown-divider"></div>
             <%= link_to 'Events', events_path, class: "dropdown-item #{yield(:event_active)}" %>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item " href="#">Our Focus Areas</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item " href="#">Impact Stories</a>
+            <a class="dropdown-item " href="#">Press & Media</a>
           </div>
         </li>
         <% if author_signed_in? %>
