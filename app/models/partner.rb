@@ -20,7 +20,7 @@ class Partner < ApplicationRecord
   acts_as_taggable # Alias for acts_as_taggable_on :tags
 
   extend FriendlyId
-  friendly_id :title, use: :slugged
+  friendly_id :name, use: :slugged
 
   PER_PAGE = 3
 

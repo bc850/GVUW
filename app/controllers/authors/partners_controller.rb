@@ -26,7 +26,7 @@ module Authors
     # POST /events
     # POST /events.json
     def create
-      @partner = Partner.new(event_params)
+      @partner = Partner.new(partner_params)
 
       respond_to do |format|
         if @partner.save

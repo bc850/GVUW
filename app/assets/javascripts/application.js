@@ -22,7 +22,7 @@ document.addEventListener("turbolinks:load", function() {
   tinymce.remove();
   tinymce.init({
     height: '475',
-    selector: 'textarea#news_body, textarea#event_body, textarea#campaign_body',
+    selector: 'textarea#news_body, textarea#event_body, textarea#campaign_body, textarea#partner_body',
     plugins: 'image media link code',
     toolbar: 'undo redo | styleselect | bold italic link | image media | code',
    });
