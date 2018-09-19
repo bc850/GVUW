@@ -1,0 +1,6 @@
+<% provide(:page_title, "New Partner") %>
+<% provide(:partner, "active") %>
+
+<div class="col-md-6 offset-md-3 mb-3">
+  <%= render 'form', partner: @partner, url: authors_partners_url %>
+</div>
