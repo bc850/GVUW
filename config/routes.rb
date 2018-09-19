@@ -18,6 +18,10 @@ Rails.application.routes.draw do
     end
     resources :board_members
     resources :staff_members
+    resources :partners do
+      put 'publish' => 'partners#publish', on: :member
+      put 'unpublish' => 'partners#unpublish', on: :member
+    end
   end
 
   scope module: 'home' do
@@ -34,6 +38,7 @@ Rails.application.routes.draw do
     get 'staff_members' => 'staff_members#index'
     get 'why-live-united', to: 'pages#why_live_united', as: :why_live_united
     get 'our-work', to: 'pages#our_work'
+    resources :partners
   end
   root to: "home/pages#home"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
