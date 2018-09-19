@@ -1,0 +1,6 @@
+<tr>
+  <td><%= link_to partner.name, edit_authors_partner_path(partner) %></td>
+  <td></td>
+  <td><%= link_to 'Edit', edit_authors_partner_path(partner), class: 'btn btn-sm btn-warning' %></td>
+  <td><%= link_to 'Remove', authors_partner_path(partner), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %></td>
+</tr>
