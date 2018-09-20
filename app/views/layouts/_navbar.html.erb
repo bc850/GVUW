@@ -55,12 +55,8 @@
             <a class="dropdown-item " href="#">Press & Media</a>
           </div>
         </li>
-        <% if author_signed_in? %>
-          <li class="nav-item dropdown mr-2 ">
-        <% else %>
-          <li class="nav-item dropdown mr-2 ">
-        <% end %>
-          <a class="<%= 'active' if current_page?(authors_news_index_path) || current_page?(board_members_path) || current_page?(staff_members_path) || current_page?(campaign_path("#{@campaign_nav.first.id}")) %> nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item dropdown mr-2 ">
+          <a class="<%= 'active' if current_page?(authors_news_index_path) || current_page?(board_members_path) || current_page?(staff_members_path) %> nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             About
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -77,9 +73,9 @@
           </div>
         </li>
         <% if author_signed_in? %>
-          <li class="nav-item mr-2 ">
+          <li class="nav-item mr-2">
         <% else %>
-          <li class="nav-item ">
+          <li class="nav-item">
         <% end %>
           <%= link_to 'Donate', root_path, class: "nav-link #{yield(:donate_active)} " %>
         </li>

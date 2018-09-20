@@ -10,6 +10,7 @@
 #  slug         :string
 #  published    :boolean
 #  published_at :datetime
+#  author_id    :bigint(8)
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #

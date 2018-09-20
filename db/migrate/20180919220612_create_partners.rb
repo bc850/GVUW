@@ -8,6 +8,7 @@ class CreatePartners < ActiveRecord::Migration[5.2]
       t.string :slug
       t.boolean :published
       t.datetime :published_at
+      t.bigint :author_id
 
       t.timestamps
     end

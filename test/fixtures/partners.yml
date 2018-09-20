@@ -10,6 +10,7 @@
 #  slug         :string
 #  published    :boolean
 #  published_at :datetime
+#  author_id    :bigint(8)
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
@@ -23,7 +24,8 @@ one:
   body: MyText
   slug: MyString
   published: false
-  published_at: 2018-09-19 11:50:39
+  published_at: 2018-09-19 17:06:12
+  author_id: one
 
 two:
   name: MyString
@@ -32,4 +34,5 @@ two:
   body: MyText
   slug: MyString
   published: false
-  published_at: 2018-09-19 11:50:39
+  published_at: 2018-09-19 17:06:12
+  author_id: two

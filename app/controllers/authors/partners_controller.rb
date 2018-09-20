@@ -7,7 +7,7 @@ module Authors
     end
 
     def new
-      @partner = Partner.new
+      @partner = current_author.partners.new
     end
 
     def show
@@ -26,7 +26,7 @@ module Authors
     # POST /events
     # POST /events.json
     def create
-      @partner = Partner.new(partner_params)
+      @partner = current_author.partners.new(partner_params)
 
       respond_to do |format|
         if @partner.save
@@ -44,7 +44,7 @@ module Authors
     def update
       respond_to do |format|
         if @partner.update(partner_params)
-          format.html { redirect_to authors_event_path(@partner), notice: 'Partner was successfully updated.' }
+          format.html { redirect_to authors_partner_path(@partner), notice: 'Partner was successfully updated.' }
           format.json { render :show, status: :ok, location: @partner }
         else
           format.html { render :edit }
@@ -66,12 +66,12 @@ module Authors
     private
       # Use callbacks to share common setup or constraints between actions.
       def set_partner
-        @partner = Partner.friendly.find(params[:id])
+        @partner = current_author.partners.friendly.find(params[:id])
       end
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def partner_params
-        params.require(:partner).permit(:name, :logo, :description, :body, :slug, :tag_list, :published)
+        params.require(:partner).permit(:name, :logo, :description, :body, :slug, :tag_list, :published, :author_id)
       end
 
   end
