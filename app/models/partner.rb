@@ -27,7 +27,7 @@ class Partner < ApplicationRecord
 
   scope :alphabetical, -> { order(name: :asc) }
   scope :published, -> { where(published: true) }
-  scope :recent_paginate, -> (page) { most_recent.paginate(page: page, per_page: PER_PAGE) }
+  scope :recent_paginate, -> (page) { alphabetical.paginate(page: page, per_page: PER_PAGE) }
   scope :with_tag, -> (tag) { tagged_with(tag) if tag.present? }
 
   scope :list_for, -> (page, tag) do

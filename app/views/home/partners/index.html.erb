@@ -1,1 +1,16 @@
-<h1>Partners Index</h1>
+<% provide(:page_title, "All Partners") %>
+<% provide(:partner_active, "active") %>
+
+<div class="partner_overlay container d-flex justify-content-center mb-4">
+  <div id="navi-parent">
+    <div id="navi">
+      <h2>Our Partners</h2>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <%= render @partners %>
+</div>
+<div class="apple_pagination mb-3">
+  <%= will_paginate @partners, container: false %>
+</div>
