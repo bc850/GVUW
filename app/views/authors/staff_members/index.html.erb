@@ -2,15 +2,18 @@
 <% provide(:leadership_active, "active") %>
 
 <div class="row">
-  <div>
-    <%= link_to 'New Staff Member', new_authors_staff_member_path, class: 'btn btn-primary' %>
+  <%= render 'authors/navigation/navigation_bar' %>
+  <div class="col-md-8">
+    <div>
+      <%= link_to 'New Staff Member', new_authors_staff_member_path, class: 'btn btn-primary' %>
+    </div>
+    <br>
+    <br>
+    <table class="table table-striped">
+      <tr>
+        <th colspan="5">Staff Member Name</th>
+      </tr>
+      <%= render @staff_members %>
+    </table>
   </div>
-  <br>
-  <br>
-  <table class="table table-striped">
-    <tr>
-      <th colspan="5">Staff Member Name</th>
-    </tr>
-    <%= render @staff_members %>
-  </table>
 </div>
