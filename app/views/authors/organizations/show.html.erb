@@ -1,0 +1,19 @@
+<% provide(:page_title, @organization.name) %>
+<% provide(:organization, "active") %>
+
+<div class="row">
+  <div>
+    <%= link_to 'Edit', edit_authors_organization_path(@organization), class: 'btn btn-sm btn-warning' %>
+  </div>
+  <div class="col-md-8 col-md-offset-2">
+    <h1><%= @organization.name %></h1>
+    <p><%= @organization.address %></p>
+    <p><%= @organization.city %>, <%= @organization.state %> <%= @organization.zip %></p>
+    <p>Phone: <%= @organization.phone %></p>
+    <p>Email: <%= @organization.email %></p>
+    <p>Latitude: <%= @organization.latitude %></p>
+    <p>Longitude: <%= @organization.longitude %></p>
+    <p>Google Maps API Key: <%= @organization.map_api %></p>
+    <p>Logo address: <%= @organization.logo %></p>
+  </div>
+</div>

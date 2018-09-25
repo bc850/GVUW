@@ -1,0 +1,4 @@
+<% provide(:page_title, "Edit #{@organization.name}") %>
+<% provide(:author_organization, "active") %>
+
+<%= render 'form', organization: @organization, url: authors_organization_url(@organization) %>
