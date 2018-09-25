@@ -3,7 +3,7 @@ module Authors
     before_action :set_organization, only: [:show, :edit, :update]
 
     def show
-
+      
     end
 
     def update
@@ -25,7 +25,7 @@ module Authors
     end
 
     def organization_params
-      params.require(:news).permit(:title, :body, :description, :banner_image_url, :author_id, :tag_list, :featured)
+      params.require(:organization).permit(:name, :address, :city, :state, :zip, :phone, :email, :latitude, :longitude, :map_api, :logo)
     end
 
   end

@@ -13,7 +13,7 @@
 
   <div class="row">
     <div class="col-md-8 offset-md-2">
-      <div class="card" style="width: 20rem;">
+      <div class="card" style="width: 100%;">
         <div class="card-block">
           <h4 class="card-title">
             <b>Edit</b>
@@ -100,9 +100,6 @@
           </li>
         </ul>
       </div>
-      <% if @event.persisted? %>
-        <%= link_to 'Show', @event %> |
-      <% end %>
     </div>
   </div>
 <% end %>
