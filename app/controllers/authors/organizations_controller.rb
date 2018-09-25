@@ -1,6 +1,6 @@
 module Authors
   class OrganizationsController < AuthorController
-    before_action :set_organization, only: [:show, :update]
+    before_action :set_organization, only: [:show, :edit, :update]
 
     def show
 
