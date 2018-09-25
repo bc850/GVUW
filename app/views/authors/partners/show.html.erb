@@ -1,21 +1,40 @@
 <% provide(:page_title, @partner.name) %>
 <% provide(:partner, "active") %>
 
-<div class="row">
-  <div>
-    <%= link_to 'Edit', edit_authors_partner_path(@partner), class: 'btn btn-sm btn-warning' %>
-    <%= link_to 'Remove', authors_partner_path(@partner), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
+<div class="container">
+  <div class="row">
+    <div>
+      <%= link_to 'Index', authors_partners_path, class: 'btn btn-sm btn-primary' %>
+      <%= link_to 'Edit', edit_authors_partner_path(@partner), class: 'btn btn-sm btn-warning' %>
+      <%= link_to 'Remove', authors_partner_path(@partner), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
+    </div>
   </div>
-  <div class="col-md-8 col-md-offset-2">
-    <h1><%= @partner.name %></h1>
-    <div class="border-top border-bottom">
-      <p class="published mt-3"><%= @partner.display_day_published %></p>
-    </div>
-    <div class="border-bottom">
-      <p class="tags mt-3"><%= raw @partner.tags.map { |t| link_to t.name, partners_path(tag: t.name) }.join(', ') %></p>
-    </div>
-    <div class="event_body mt-3">
-      <%= @partner.body.html_safe %>
+</div>
+<br>
+<div class="row mb-3">
+  <div class="col-md-8">
+    <div class="card" style="width: 100%;">
+      <div class="card-block">
+        <div class="card-title ml-3 mt-2 text-center">
+          <h1><%= @partner.name %></h1>
+        </div>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <div class="partner_body mt-3">
+            <div class="banner_image text-center">
+              <%= image_tag(@partner.logo) %>
+            </div>
+            <br>
+            <div class="partner_body_image">
+              <%= @partner.body.html_safe %>
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <p class="tags mt-3"><%= raw @partner.tags.map { |t| link_to t.name, partners_path(tag: t.name) }.join(', ') %></p>
+        </li>
+      </ul>
     </div>
   </div>
 </div>

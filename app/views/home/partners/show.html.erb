@@ -7,21 +7,18 @@
       <div class="col-md-8 col-md-offset-2">
         <div class="card" style="width: 100%;">
           <div class="card-block">
-            <div class="card-title ml-3 mt-2">
+            <div class="card-title ml-3 mt-2 text-center">
               <h1><%= @partner.name %></h1>
             </div>
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
-              <p class="published mt-3"><%= @partner.display_day_published %></p>
-            </li>
-            <li class="list-group-item">
-              <div class="event_body mt-3">
+              <div class="partner_body mt-3">
                 <div class="banner_image text-center">
                   <%= image_tag(@partner.logo) %>
                 </div>
                 <br>
-                <div>
+                <div class="partner_body_image">
                   <%= @partner.body.html_safe %>
                 </div>
               </div>
