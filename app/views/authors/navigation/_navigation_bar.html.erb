@@ -7,7 +7,25 @@
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">
-        <%= link_to "Board Members", authors_board_members_path %>
+        <%= link_to "Board Members", authors_board_members_path, class: "#{yield(:leadership_active)}" %>
+      </li>
+      <li class="list-group-item">
+        <%= link_to "Campaigns", authors_campaigns_path, class: "#{yield(:leadership_active)}" %>
+      </li>
+      <li class="list-group-item">
+        <%= link_to "Events", authors_events_path, class: "#{yield(:leadership_active)}" %>
+      </li>
+      <li class="list-group-item">
+        <%= link_to "News Items", authors_news_index_path, class: "#{yield(:leadership_active)}" %>
+      </li>
+      <li class="list-group-item">
+        <%= link_to "Organization", edit_authors_organization_path(1), class: "#{yield(:leadership_active)}" %>
+      </li>
+      <li class="list-group-item">
+        <%= link_to "Partners", authors_partners_path, class: "#{yield(:leadership_active)}" %>
+      </li>
+      <li class="list-group-item">
+        <%= link_to "Staff Members", authors_staff_members_path, class: "#{yield(:leadership_active)}" %>
       </li>
     </ul>
   </div>
