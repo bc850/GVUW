@@ -117,3 +117,16 @@ Event.create!(
   :featured => 'true',
   :published_at => '2018-08-24',
 )
+
+####### CREATE THE ORGANIZATION #######
+Organization.delete_all
+Organization.create!(
+  :name => "Greater Valdosta United Way",
+  :address => "210 West Park Ave.",
+  :city => "Valdosta",
+  :state => "GA",
+  :zip => "31602",
+  :phone => "229-242-2208",
+  :email => "info@unitedwayvaldosta.org",
+  :logo => "https://s3.amazonaws.com/united-way-greater-valdosta/GVUW+Logo+w-+b.g.jpg",
+)

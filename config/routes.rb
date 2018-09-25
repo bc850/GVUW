@@ -22,6 +22,7 @@ Rails.application.routes.draw do
       put 'publish' => 'partners#publish', on: :member
       put 'unpublish' => 'partners#unpublish', on: :member
     end
+    put 'organization' => 'organizations#update'
   end
 
   scope module: 'home' do
