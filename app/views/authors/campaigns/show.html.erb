@@ -1,21 +1,53 @@
 <% provide(:page_title, "#{@campaign.year} Annual Campaign") %>
 <% provide(:author, "active") %>
 
-<div class="row">
-  <div>
-    <%= link_to 'Edit', edit_authors_campaign_path(@campaign), class: 'btn btn-sm btn-warning' %>
-    <%= link_to 'Remove', authors_campaign_path(@campaign), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
+<div class="container">
+  <div class="row">
+    <div>
+      <%= link_to 'Index', authors_campaigns_path, class: 'btn btn-sm btn-primary' %>
+      <%= link_to 'Edit', edit_authors_campaign_path(@campaign), class: 'btn btn-sm btn-warning' %>
+      <%= link_to 'Remove', authors_campaign_path(@campaign), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
+    </div>
   </div>
-  <div class="col-md-8 col-md-offset-2">
-    <h1><%= @campaign.year %> Annual Campaign</h1>
-    <div class="border-top border-bottom">
-      <p class="published mt-3"><%= @campaign.display_day_published %></p>
-    </div>
-    <div class="border-bottom">
-      <p class="tags mt-3"><%= raw @campaign.tags.map { |t| link_to t.name, campaigns_path(tag: t.name) }.join(', ') %></p>
-    </div>
-    <div class="event_body mt-3">
-      <%= @campaign.body.html_safe %>
+</div>
+<br>
+<div class="row d-flex justify-content-center mb-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card" style="width: 100%;">
+          <div class="card-block">
+            <div class="card-title ml-3 mt-2 text-center">
+              <h1><%= @campaign.year %> Annual Campaign</h1>
+            </div>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <p class="published mt-3"><%= @campaign.display_day_published %></p>
+            </li>
+            <li class="list-group-item">
+              <div class="campaign_body mt-3 text-center">
+                <div>
+                  <div class="image_class mb-4">
+                    <%= image_tag(@campaign.banner_image_url) %>
+                  </div>
+                  <p>Our <%= @campaign.year %> campaign goal is <%= number_to_currency(@campaign.campaign_goal) %></p>
+                  <p>We are currently at <%= number_to_percentage(@campaign_percentage, precision: 0) %> of our goal!</p>
+                </div>
+                <div class="progress mb-3" style="height: 40px;">
+                  <div class="progress-bar big-font" role="progressbar" style="width: <%= number_to_percentage(@campaign_percentage) %>;" aria-valuenow="<%= @campaign_percentage %>" aria-valuemin="0" aria-valuemax="100"><%= number_to_currency(@campaign.total) %></div>
+                </div>
+                <div>
+                  <%= @campaign.body.html_safe %>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <p class="tags mt-3"><%= raw @campaign.tags.map { |t| link_to t.name, campaigns_path(tag: t.name) }.join(', ') %></p>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>

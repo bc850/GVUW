@@ -11,6 +11,7 @@ module Authors
     end
 
     def show
+      @campaign_percentage = @campaign.campaign_math
     end
 
     def publish
