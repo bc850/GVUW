@@ -14,6 +14,8 @@ module Authors
     end
 
     def show
+      @registrations = @event.registrations
+      @registrations = @registrations.paginate(:page => params[:page], :per_page => 3)
     end
 
     def publish

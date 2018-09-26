@@ -65,7 +65,7 @@
                     <th>Phone Number</th>
                     <th>Email</th>
                   </tr>
-                  <% @event.registrations.each do |reg| %>
+                  <% @registrations.each do |reg| %>
                     <tr>
                       <td><%= reg.name %></td>
                       <td><%= reg.phone %></td>
@@ -73,6 +73,9 @@
                     </tr>
                   <% end %>
                 </table>
+                <div class="apple_pagination">
+                  <%= will_paginate @registrations, container: false %>
+                </div>
               </li>
             </ul>
           </div>
