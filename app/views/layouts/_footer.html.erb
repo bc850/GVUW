@@ -13,7 +13,7 @@
           <a href="#">Terms of Use</a>
         </div>
         <div class="mt-3">
-          <p>&copy; 2018 Greater Valdosta United Way. All rights reserved.</p>
+          <p>&copy; 2018 <%= @organization.name %>. All rights reserved.</p>
         </div>
       </div>
       <div class="middle_col col-md-4">
@@ -21,6 +21,13 @@
           <%= link_to root_path do %>
             <%= image_tag("https://s3.amazonaws.com/united-way-greater-valdosta/GVUW+Logo+w-+b.g.jpg") %>
           <% end %>
+          <div>
+            <p>
+              <%= @organization.address %>
+              <br>
+              <%= @organization.city %>, <%= @organization.state %> <%= @organization.zip %>
+            </p>
+          </div>
         </div>
         <% if author_signed_in? %>
         <% else %>
