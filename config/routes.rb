@@ -35,8 +35,8 @@ Rails.application.routes.draw do
       resources :registrations #-> url.com/events/:event_id/registrations/
     end
     resources :campaigns
-    get 'board_members' => 'board_members#index'#, as: :board_members
-    get 'staff_members' => 'staff_members#index'
+    get 'board-members' => 'board_members#index'#, as: :board_members
+    get 'staff-members' => 'staff_members#index'
     get 'why-live-united', to: 'pages#why_live_united', as: :why_live_united
     get 'our-work', to: 'pages#our_work'
     resources :partners
