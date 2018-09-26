@@ -50,6 +50,33 @@
         <div class="col-md-4 text-center registerable">
           <%= render partial: "home/registrations/form" %>
         </div>
+        <div class="col-md-8 mt-3">
+          <div class="card" style="width: 100%;">
+            <div class="card-block">
+              <div class="card-title ml-3 mt-2">
+                <h4 class="text-center">Registrations</h4>
+              </div>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <table class="table table-striped">
+                  <tr>
+                    <th>Name</th>
+                    <th>Phone Number</th>
+                    <th>Email</th>
+                  </tr>
+                  <% @event.registrations.each do |reg| %>
+                    <tr>
+                      <td><%= reg.name %></td>
+                      <td><%= reg.phone %></td>
+                      <td><%= reg.email %></td>
+                    </tr>
+                  <% end %>
+                </table>
+              </li>
+            </ul>
+          </div>
+        </div>
       <% end %>
     </div>
   </div>
