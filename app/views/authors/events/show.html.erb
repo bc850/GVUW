@@ -1,16 +1,40 @@
 <% provide(:page_title, @event.title) %>
 <% provide(:author, "active") %>
 
-<div class="container">
-  <div class="row">
-    <div>
-      <%= link_to 'Index', authors_events_path, class: 'btn btn-sm btn-primary' %>
-      <%= link_to 'Edit', edit_authors_event_path(@event), class: 'btn btn-sm btn-warning' %>
-      <%= link_to 'Remove', authors_event_path(@event), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
+<% if @event.registerable? %>
+  <div class="row mb-3">
+    <div class="col-md-6 mt-3">
+      <div class="card" style="width: 100%;">
+        <div class="card-block">
+          <div class="card-title ml-3 mt-2">
+            <h4 class="text-center">Registrations</h4>
+          </div>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <table class="table table-striped">
+              <tr>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+              </tr>
+              <% @registrations.each do |reg| %>
+                <tr>
+                  <td><%= reg.name %></td>
+                  <td><%= reg.phone %></td>
+                  <td><%= reg.email %></td>
+                </tr>
+              <% end %>
+            </table>
+            <div class="apple_pagination">
+              <%= will_paginate @registrations, container: false %>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
-<br>
+<% end %>
 <div class="row d-flex justify-content-center mb-3">
   <div class="container">
     <div class="row">
@@ -19,68 +43,36 @@
       <% else %>
         <div class="col-md-8 col-md-offset-2">
       <% end %>
-          <div class="card" style="width: 100%;">
-            <div class="card-block">
-              <div class="card-title ml-3 mt-2">
-                <h1><%= @event.title %></h1>
-              </div>
+        <div class="card" style="width: 100%;">
+          <div class="card-block">
+            <div class="card-title ml-3 mt-2">
+              <h1><%= @event.title %></h1>
             </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">
-                <p class="published mt-3"><%= @event.display_day_published %></p>
-              </li>
-              <li class="list-group-item">
-                <div class="event_body mt-3">
-                  <div class="banner_image">
-                    <%= image_tag(@event.banner_image_url) %>
-                  </div>
-                  <br>
-                  <div>
-                    <%= @event.body.html_safe %>
-                  </div>
-                </div>
-              </li>
-              <li class="list-group-item">
-                <p class="tags mt-3"><%= raw @event.tags.map { |t| link_to t.name, events_path(tag: t.name) }.join(', ') %></p>
-              </li>
-            </ul>
           </div>
-        </div>
-      <% if @event.registerable? %>
-        <div class="col-md-4 text-center registerable">
-          <%= render partial: "home/registrations/form" %>
-        </div>
-        <div class="col-md-8 mt-3">
-          <div class="card" style="width: 100%;">
-            <div class="card-block">
-              <div class="card-title ml-3 mt-2">
-                <h4 class="text-center">Registrations</h4>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <p class="published mt-3"><%= @event.display_day_published %></p>
+              <%= link_to 'Index', authors_events_path, class: 'btn btn-sm btn-primary' %>
+              <%= link_to 'Edit', edit_authors_event_path(@event), class: 'btn btn-sm btn-warning' %>
+              <%= link_to 'Remove', authors_event_path(@event), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
+            </li>
+            <li class="list-group-item">
+              <div class="event_body mt-3">
+                <div class="banner_image">
+                  <%= image_tag(@event.banner_image_url) %>
+                </div>
+                <br>
+                <div>
+                  <%= @event.body.html_safe %>
+                </div>
               </div>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">
-                <table class="table table-striped">
-                  <tr>
-                    <th>Name</th>
-                    <th>Phone Number</th>
-                    <th>Email</th>
-                  </tr>
-                  <% @registrations.each do |reg| %>
-                    <tr>
-                      <td><%= reg.name %></td>
-                      <td><%= reg.phone %></td>
-                      <td><%= reg.email %></td>
-                    </tr>
-                  <% end %>
-                </table>
-                <div class="apple_pagination">
-                  <%= will_paginate @registrations, container: false %>
-                </div>
-              </li>
-            </ul>
-          </div>
+            </li>
+            <li class="list-group-item">
+              <p class="tags mt-3"><%= raw @event.tags.map { |t| link_to t.name, events_path(tag: t.name) }.join(', ') %></p>
+            </li>
+          </ul>
         </div>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>
