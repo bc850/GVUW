@@ -27,12 +27,6 @@
             <%= @organization.city %>, <%= @organization.state %> <%= @organization.zip %>
           </p>
         </div>
-        <% if author_signed_in? %>
-        <% else %>
-        <div class="button_container mt-3">
-          <%= button_to "Login", new_author_session_path, :class => "btn btn-default" %>
-        </div>
-        <% end %>
       </div>
       <div class="bottom_col col-md-4">
         <h3 style="color: #ff8000;">Resources</h3>
@@ -47,6 +41,12 @@
             <a href="#">Contact Us</a>
           </li>
         </ul>
+        <% if author_signed_in? %>
+        <% else %>
+        <div class="button_container mt-3">
+          <%= button_to "Login", new_author_session_path, :class => "btn btn-default" %>
+        </div>
+        <% end %>
       </div>
     </div>
   </div>
