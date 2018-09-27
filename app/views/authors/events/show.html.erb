@@ -51,7 +51,7 @@
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
-              <p class="published mt-3"><%= @event.display_day_published %></p>
+              <p class="published mt-3"><%= @event.display_day_published %> by <b><%= @event.author.name %></b></p>
               <%= link_to 'Index', authors_events_path, class: 'btn btn-sm btn-primary' %>
               <%= link_to 'Edit', edit_authors_event_path(@event), class: 'btn btn-sm btn-warning' %>
               <%= link_to 'Remove', authors_event_path(@event), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
