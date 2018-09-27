@@ -14,7 +14,7 @@
       <div class="col-md-6">
         <h4><%= @events.first.title %></h4>
         <p><%= @events.first.description %></p>
-        <%= button_to "Read More", event_path(@events.first), class: "btn btn-primary" %>
+        <%= link_to "Read More", event_path(@events.first), class: "btn btn-primary" %>
         <div class="inline-block events_thumbs mt-4">
           <% @events.each do |event| %>
             <%= image_tag(event.banner_image_url) %>
