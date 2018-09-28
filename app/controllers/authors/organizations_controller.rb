@@ -21,7 +21,7 @@ module Authors
     end
 
     def organization_params
-      params.require(:organization).permit(:name, :address, :city, :state, :zip, :phone, :email, :latitude, :longitude, :map_api, :logo)
+      params.require(:organization).permit(:name, :address, :city, :state, :zip, :phone, :email, :latitude, :longitude, :map_api, :mailchimp_api, :logo)
     end
   end
 end
