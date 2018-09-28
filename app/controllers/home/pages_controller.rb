@@ -12,7 +12,7 @@ module Home
 
     def home
       @news = News.published.featured.order(created_at: :desc).limit(3)
-      @events = Event.published.featured.order(created_at: :asc).limit(3)
+      @events = Event.published.featured.order(created_at: :desc).limit(3)
     end
 
     private
