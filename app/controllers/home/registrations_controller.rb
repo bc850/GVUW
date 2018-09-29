@@ -6,6 +6,8 @@ module Home
       @registration = @event.registrations.create(registration_params)
       @registration.save
 
+      EventRegistrationMailer.new_event_registration(@registration).deliver_now
+
       respond_to do |format|
         if @registration.save
           format.html { redirect_to event_path(@event), notice: 'You have successfully registered!'}
