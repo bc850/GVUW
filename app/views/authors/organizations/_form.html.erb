@@ -90,6 +90,12 @@
           </li>
           <li class="list-group-item">
             <div class="field">
+              <%= form.label "Mandrill API Key" %>
+              <%= form.text_field :mandrill_api, class: 'form-control' %>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="field">
               <%= form.label "Logo URL" %>
               <%= form.text_field :logo, class: 'form-control' %>
             </div>
