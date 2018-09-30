@@ -15,6 +15,9 @@
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #  registerable     :boolean
+#  event_date       :date
+#  start_time       :time
+#  end_time         :time
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

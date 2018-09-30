@@ -17,6 +17,7 @@
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #  mailchimp_api :string
+#  mandrill_api  :string
 #
 
 require 'test_helper'
