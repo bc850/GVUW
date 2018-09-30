@@ -1,13 +1,35 @@
 @import "bootstrap";
 @import "util";
 
-
-
-
-
-
-
-
+.areas {
+  .card {
+    border: none;
+    border-radius: 0;
+    height: 400px;
+    margin-bottom: 20px;
+    background-color: white;
+    .card-topper {
+      height: 200px !important;
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+    .card-block {
+      padding: 10px;
+      .card-title {
+        font-size: 1.3rem;
+        margin-bottom: 0.3rem;
+        a {
+          color: black;
+          text-decoration: none;
+        }
+      }
+      .card-text {
+        font-size: 0.9rem !important;
+      }
+    }
+  }
+}
 
 @include media-breakpoint-up(md) {
   .hero_overlay {
