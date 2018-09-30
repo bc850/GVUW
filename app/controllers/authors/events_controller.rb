@@ -76,7 +76,7 @@ module Authors
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def event_params
-        params.require(:event).permit(:title, :body, :description, :banner_image_url, :author_id, :tag_list, :featured, :registerable)
+        params.require(:event).permit(:title, :body, :description, :banner_image_url, :author_id, :tag_list, :featured, :registerable, :event_date, :start_time, :end_time)
       end
 
   end

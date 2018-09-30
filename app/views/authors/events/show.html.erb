@@ -51,6 +51,9 @@
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
+              <p><%= @event.event_date.strftime("%B %d, %Y") %>, <%= @event.start_time.strftime("%I:%M %p") %> to <%= @event.end_time.strftime("%I:%M %p") %></p>
+            </li>
+            <li class="list-group-item">
               <p class="published mt-3"><%= @event.display_day_published %> by <b><%= @event.author.name %></b></p>
               <%= link_to 'Index', authors_events_path, class: 'btn btn-sm btn-primary' %>
               <%= link_to 'Edit', edit_authors_event_path(@event), class: 'btn btn-sm btn-warning' %>
