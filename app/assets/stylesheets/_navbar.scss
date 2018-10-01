@@ -5,4 +5,45 @@
     width: 120px;
     height: auto;
   }
+  ul li {
+    a {
+      color: #11548D !important;
+    }
+    a:hover {
+      color: #F7B13B !important;
+    }
+    a.active {
+      color: #F7B13B !important;
+    }
+    .dropdown-menu {
+      a:hover {
+        background-color: #11548D !important;
+        color: #fff !important;
+      }
+      a.active {
+        background-color: #11548D !important;
+        color: #fff !important;
+      }
+    }
+    a:active {
+      color: #F7B13B !important;
+    }
+  }
+  .dropdown:hover > .dropdown-menu {
+    display: block !important;
+  }
+  .dropdown > .dropdown-toggle:active {
+      /*Without this, clicking will make it sticky*/
+      pointer-events: none !important;
+  }
+  .dropdown-toggle::after {
+    display: none !important;
+  }
+  .btn {
+    background-color: #F7B13B !important;
+    color: #fff !important;
+  }
+  .btn:hover {
+    background-color: #EB442F !important;
+  }
 }

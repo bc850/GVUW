@@ -14,6 +14,10 @@
 #  featured         :boolean
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
+#  registerable     :boolean
+#  event_date       :date
+#  start_time       :time
+#  end_time         :time
 #
 
 class Event < ApplicationRecord

@@ -1,0 +1,32 @@
+<div class="col-md-4 mb-3">
+  <div class="card" style="width: 100%; height: 400px !important;">
+    <div class="card-block">
+      <h4 class="card-title ml-3 mt-2" style="font-size: 20px !important;">
+        <b>Navigation</b>
+      </h4>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <%= link_to "Board Members", authors_board_members_path, class: "#{yield(:leadership_board_active)}" %>
+      </li>
+      <li class="list-group-item">
+        <%= link_to "Campaigns", authors_campaigns_path, class: "#{yield(:author_campaigns)}" %>
+      </li>
+      <li class="list-group-item">
+        <%= link_to "Events", authors_events_path, class: "#{yield(:author_events)}" %>
+      </li>
+      <li class="list-group-item">
+        <%= link_to "News Items", authors_news_index_path, class: "#{yield(:author_news)}" %>
+      </li>
+      <li class="list-group-item">
+        <%= link_to "Organization Information", edit_authors_organization_path(1), class: "#{yield(:author_organization)}" %>
+      </li>
+      <li class="list-group-item">
+        <%= link_to "Partners", authors_partners_path, class: "#{yield(:partners_active)}" %>
+      </li>
+      <li class="list-group-item">
+        <%= link_to "Staff Members", authors_staff_members_path, class: "#{yield(:leadership_staff_active)}" %>
+      </li>
+    </ul>
+  </div>
+</div>

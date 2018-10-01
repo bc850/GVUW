@@ -1,0 +1,13 @@
+<% provide(:page_title, "Edit Staff Members") %>
+<% provide(:staff_member, "active") %>
+
+<div class="row mb-3">
+  <div class="col-md-6">
+    <%= render 'form', staff_member: @staff_member, url: authors_staff_member_url %>
+  </div>
+  <div class="col-md-6">
+    <div class="field">
+      <%= render 'single_member' %>
+    </div>
+  </div>
+</div>

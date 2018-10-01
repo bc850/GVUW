@@ -39,6 +39,24 @@
           </li>
           <li class="list-group-item">
             <div class="field">
+              <%= form.label "Date:" %>
+              <%= form.date_select :event_date, class: 'form-control' %>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="field">
+              <%= form.label :start_time %>
+              <%= form.time_select :start_time, class: 'form-control' %>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="field">
+              <%= form.label :end_time %>
+              <%= form.time_select :end_time, class: 'form-control' %>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="field">
               <%= form.label :description %>
               <%= form.text_area :description, class: 'form-control' %>
             </div>

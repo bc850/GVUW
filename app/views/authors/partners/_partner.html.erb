@@ -1,0 +1,11 @@
+<tr>
+  <td><%= link_to partner.name, authors_partner_path(partner) %></td>
+  <td></td>
+  <% if partner.published? %>
+    <td><%= link_to 'Unpublish', unpublish_authors_partner_path(partner), method: :put, class: 'btn btn-sm btn-primary' %></td>
+  <% else %>
+    <td><%= link_to 'Publish', publish_authors_partner_path(partner), method: :put, class: 'btn btn-sm btn-success' %></td>
+  <% end %>
+  <td><%= link_to 'Edit', edit_authors_partner_path(partner), class: 'btn btn-sm btn-warning' %></td>
+  <td><%= link_to 'Remove', authors_partner_path(partner), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %></td>
+</tr>

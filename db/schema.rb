@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_13_171924) do
+ActiveRecord::Schema.define(version: 2018_09_30_195553) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,34 @@ ActiveRecord::Schema.define(version: 2018_09_13_171924) do
     t.index ["reset_password_token"], name: "index_authors_on_reset_password_token", unique: true
   end
 
+  create_table "board_members", force: :cascade do |t|
+    t.string "name"
+    t.string "business"
+    t.string "position"
+    t.integer "commencement_year"
+    t.integer "roll_off_year"
+    t.boolean "rolled_off"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "member_image"
+  end
+
+  create_table "campaigns", force: :cascade do |t|
+    t.integer "year"
+    t.decimal "total"
+    t.decimal "percentage"
+    t.text "body"
+    t.string "slug"
+    t.bigint "author_id"
+    t.boolean "published"
+    t.datetime "published_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "banner_image_url"
+    t.text "description"
+    t.decimal "campaign_goal"
+  end
+
   create_table "events", force: :cascade do |t|
     t.string "title"
     t.string "banner_image_url"
@@ -47,6 +75,9 @@ ActiveRecord::Schema.define(version: 2018_09_13_171924) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "registerable"
+    t.date "event_date"
+    t.time "start_time"
+    t.time "end_time"
   end
 
   create_table "friendly_id_slugs", id: :serial, force: :cascade do |t|
@@ -77,6 +108,37 @@ ActiveRecord::Schema.define(version: 2018_09_13_171924) do
     t.index ["slug"], name: "index_news_on_slug", unique: true
   end
 
+  create_table "organizations", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
+    t.string "phone"
+    t.string "email"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "map_api"
+    t.string "logo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "mailchimp_api"
+    t.string "mandrill_api"
+  end
+
+  create_table "partners", force: :cascade do |t|
+    t.string "name"
+    t.string "logo"
+    t.text "description"
+    t.text "body"
+    t.string "slug"
+    t.boolean "published"
+    t.datetime "published_at"
+    t.bigint "author_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "registrations", force: :cascade do |t|
     t.string "name"
     t.string "phone"
@@ -85,6 +147,15 @@ ActiveRecord::Schema.define(version: 2018_09_13_171924) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_registrations_on_event_id"
+  end
+
+  create_table "staff_members", force: :cascade do |t|
+    t.string "name"
+    t.string "position"
+    t.string "member_image"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "taggings", id: :serial, force: :cascade do |t|

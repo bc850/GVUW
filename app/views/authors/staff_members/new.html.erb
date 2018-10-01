@@ -1,0 +1,6 @@
+<% provide(:page_title, "New Staff Member") %>
+<% provide(:staff_member, "active") %>
+
+<div class="col-md-6 offset-md-3 mb-3">
+  <%= render 'form', staff_member: @staff_member, url: authors_staff_members_url %>
+</div>

@@ -1,0 +1,7 @@
+<% provide(:page_title, "New Board Member") %>
+<% provide(:board_member, "active") %>
+
+
+  <div class="col-md-6 offset-md-3 mb-3">
+    <%= render 'form', board_member: @board_member, url: authors_board_members_url %>
+  </div>

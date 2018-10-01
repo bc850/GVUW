@@ -1,0 +1,49 @@
+# == Schema Information
+#
+# Table name: organizations
+#
+#  id            :bigint(8)        not null, primary key
+#  name          :string
+#  address       :string
+#  city          :string
+#  state         :string
+#  zip           :string
+#  phone         :string
+#  email         :string
+#  latitude      :float
+#  longitude     :float
+#  map_api       :string
+#  logo          :string
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  mailchimp_api :string
+#  mandrill_api  :string
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  address: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  phone: MyString
+  email: MyString
+  latitude: 1.5
+  longitude: 1.5
+  map_api: MyString
+  logo: MyString
+
+two:
+  name: MyString
+  address: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  phone: MyString
+  email: MyString
+  latitude: 1.5
+  longitude: 1.5
+  map_api: MyString
+  logo: MyString

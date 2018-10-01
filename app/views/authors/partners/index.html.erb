@@ -1,0 +1,19 @@
+<% provide(:page_title, "All Partners") %>
+<% provide(:partners_active, "active") %>
+
+<div class="row">
+  <%= render 'authors/navigation/navigation_bar' %>
+  <div class="col-md-8">
+    <div>
+      <%= link_to 'New Partner', new_authors_partner_path, class: 'btn btn-primary' %>
+    </div>
+    <br>
+    <br>
+    <table class="table table-striped">
+      <tr>
+        <th colspan="5">Partner Name</th>
+      </tr>
+      <%= render @partners %>
+    </table>
+  </div>
+</div>

@@ -3,7 +3,7 @@
 }
 
 .apple_pagination {
-  background: #f1f1f1;
+  background: #fff;
   border: 1px solid #e5e5e5;
   text-align: center;
   padding: 1em;
@@ -29,3 +29,37 @@
     color: black; }
     .apple_pagination a:hover, .apple_pagination a:focus {
       text-decoration: underline; }
+
+
+.hero_overlay {
+  -webkit-background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 320px;
+  margin-top: -20px;
+  .hero-info {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    height: 320px;
+    padding: 20px 20px 20px 20px;
+    h1 {
+      margin-top: 40px;
+      font-size: 45px;
+      padding-left: 18px;
+      padding-top: 22px;
+      line-height: 0.9;
+      border-bottom: 4px solid #ffffff !important;
+      color: #ffffff !important;
+      background: url(https://s3.amazonaws.com/united-way-greater-valdosta/hero-title-corner.png) no-repeat top left;
+    }
+    p {
+      color: #ffffff !important;
+      font-size: 20px;
+    }
+  }
+  .dark-blue-bg {
+    background: rgba(0, 81, 145, 0.7);
+  }
+}

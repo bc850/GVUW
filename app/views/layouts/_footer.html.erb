@@ -1,0 +1,53 @@
+<footer class="footer container-fluid pt-5 pb-3">
+  <div class="container text-center">
+    <div class="row">
+      <div class="first_col col-md-4">
+        <div>
+          <a href="#" class="fa fa-facebook-square"></a>
+          <a href="#" class="fa fa-twitter-square"></a>
+          <a href="#" class="fa fa-youtube-square"></a>
+          <a href="#" class="fa fa-linkedin-square"></a>
+        </div>
+        <div class="terms_policy mt-3">
+          <a href="#">Privacy Policy</a><span style="color: #F7B13B !important;"> | </span>
+          <a href="#">Terms of Use</a>
+        </div>
+        <div class="mt-3">
+          <p>&copy; 2018 <%= @organization.name %>. All rights reserved.</p>
+        </div>
+      </div>
+      <div class="middle_col col-md-4">
+        <div>
+          <%= link_to root_path do %>
+            <%= image_tag("https://s3.amazonaws.com/united-way-greater-valdosta/GVUW+Logo+w-+b.g.jpg") %>
+          <% end %>
+          <p class="mt-2">
+            <%= @organization.address %>
+            <br>
+            <%= @organization.city %>, <%= @organization.state %> <%= @organization.zip %>
+          </p>
+        </div>
+      </div>
+      <div class="bottom_col col-md-4">
+        <h3 style="color: #ff8000;">Resources</h3>
+        <ul>
+          <li>
+            <a href="#">Press and Media</a>
+          </li>
+          <li>
+            <a href="#">Partners</a>
+          </li>
+          <li>
+            <a href="#">Contact Us</a>
+          </li>
+        </ul>
+        <% if author_signed_in? %>
+        <% else %>
+        <div class="button_container mt-3">
+          <%= button_to "Login", new_author_session_path, :class => "btn btn-default" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</footer>

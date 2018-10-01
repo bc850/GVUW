@@ -1,0 +1,80 @@
+@import "bootstrap";
+@import "colors";
+
+.footer {
+  background-color: #11548D;
+  h1, h2, h3, h4, h5, h6, p, span, .fa {
+    color: #fff !important;
+  }
+  h3 {
+    font-weight: 400;
+  }
+  .fa {
+    font-size: 40px;
+  }
+  .terms_policy {
+    a {
+      color: #fff !important;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #F7B13B !important;
+    }
+  }
+  .middle_col {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    img {
+      width: 175px;
+      height: auto;
+    }
+  }
+  .bottom_col {
+    //margin-top: 30px;
+  }
+  h3 {
+    color: #F7B13B !important;
+  }
+  ul {
+    margin:0;
+    padding:0;
+    text-align: center;
+    list-style: none;
+    li {
+      a {
+        color: #fff !important;
+      }
+    }
+    li {
+      a:hover {
+        color: #F7B13B !important;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(sm) {
+
+}
+
+@include media-breakpoint-up(md) {
+  .footer {
+    .middle_col {
+      margin-top: 0;
+    }
+    .bottom_col {
+      h3 {
+        margin-top: -5px;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+
+}
+
+@include media-breakpoint-up(xl) {
+
+}

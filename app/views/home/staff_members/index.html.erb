@@ -1,0 +1,19 @@
+<% provide(:page_title, "Staff Members") %>
+<% provide(:leadership_active, "active") %>
+
+<div class="overlay container d-flex justify-content-center mt-4">
+  <div id="navi-parent">
+    <div id="navi">
+      <h2>Meet our Leadership</h2>
+    </div>
+  </div>
+</div>
+<div class="title_container my-4">
+  <div class="text-center">
+    <%= link_to "Board of Directors", board_members_path %> /
+    <%= link_to "Staff Members", staff_members_path, id: "active" %>
+  </div>
+</div>
+<div class="row">
+  <%= render @staff_members %>
+</div>

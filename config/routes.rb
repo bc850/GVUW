@@ -12,6 +12,17 @@ Rails.application.routes.draw do
       put 'publish' => 'events#publish', on: :member
       put 'unpublish' => 'events#unpublish', on: :member
     end
+    resources :campaigns do
+      put 'publish' => 'campaigns#publish', on: :member
+      put 'unpublish' => 'campaigns#unpublish', on: :member
+    end
+    resources :board_members
+    resources :staff_members
+    resources :partners do
+      put 'publish' => 'partners#publish', on: :member
+      put 'unpublish' => 'partners#unpublish', on: :member
+    end
+    resources :organizations
   end
 
   scope module: 'home' do
@@ -23,6 +34,12 @@ Rails.application.routes.draw do
     resources :events do #-> url.com/events/:id
       resources :registrations #-> url.com/events/:event_id/registrations/
     end
+    resources :campaigns
+    get 'board-members' => 'board_members#index'#, as: :board_members
+    get 'staff-members' => 'staff_members#index'
+    get 'why-live-united', to: 'pages#why_live_united', as: :why_live_united
+    get 'our-work', to: 'pages#our_work'
+    resources :partners
   end
   root to: "home/pages#home"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

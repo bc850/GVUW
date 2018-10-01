@@ -1,7 +1,7 @@
 <% provide(:page_title, @event.title) %>
 <% provide(:blog_active, "active") %>
 
-<div class="row d-flex justify-content-center">
+<div class="row d-flex justify-content-center mb-3">
   <div class="container">
     <div class="row">
       <% if @event.registerable? %>
@@ -17,7 +17,7 @@
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item">
-                <p class="published mt-3"><%= @event.display_day_published %></p>
+                <p class="published mt-3"><%= @event.display_day_published %> by <b><%= @event.author.name %></b></p>
               </li>
               <li class="list-group-item">
                 <div class="event_body mt-3">

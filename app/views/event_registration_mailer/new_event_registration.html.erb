@@ -1,0 +1,7 @@
+<p>Thank you for registering for <%= @organization.name %>'s <%= @registration.event.title %>!</p>
+
+<p>We look forward to seeing you on "SOME DATE VARIABLE" at "SOME TIME VARIABLE".</p>
+
+<p>"EXTRA INFORMATION VARIABLE".</p>
+
+<p>To see information about this event, please visit <%= link_to "#{@registration.event.title} Page", @registration.event %>.</p>

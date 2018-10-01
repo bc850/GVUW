@@ -1,0 +1,58 @@
+<%= form_with(url: url, model: @staff_member, local: true) do |form| %>
+  <% if @staff_member.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@staff_member.errors.count, "error") %> prohibited this news from being saved:</h2>
+
+      <ul>
+      <% @staff_member.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="card" style="width: 100%;">
+    <div class="card-block">
+      <% if @staff_member.new_record? %>
+        <h4 class="card-title">New Staff Member</h4>
+      <% else %>
+        <h4 class="card-title">
+          <b>Edit</b>
+          <span class="thin-text"><%= @staff_member.name %>'s Record</span>
+        </h4>
+      <% end %>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <div class="field">
+          <%= form.label :name %>
+          <%= form.text_field :name, class: 'form-control' %>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="field">
+          <%= form.label :member_image %>
+          <%= form.text_field :member_image, class: 'form-control' %>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="field">
+          <%= form.label :position %>
+          <%= form.text_field :position, class: 'form-control' %>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="field">
+          <%= form.label :description %>
+          <%= form.text_area :description, class: 'form-control' %>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="actions">
+          <%= form.submit "Save Staff Member", class: "btn btn-success btn-block" %>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <%= link_to 'Back', authors_staff_members_path %>
+<% end %>
