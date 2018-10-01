@@ -2,6 +2,8 @@ module Authors
   class EventsController < AuthorController
     before_action :set_event, only: [:show, :edit, :update, :destroy, :publish, :unpublish]
 
+    #
+
     # GET /events
     # GET /events.json
     def index
