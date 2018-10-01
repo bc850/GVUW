@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   devise_for :authors
   namespace :authors do
     get '/account' => 'accounts#edit', as: :account
