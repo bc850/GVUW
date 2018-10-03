@@ -20,6 +20,7 @@
 #  author_role            :boolean          default(FALSE)
 #  board_member_role      :boolean          default(FALSE)
 #  user_role              :boolean          default(TRUE)
+#  name                   :string
 #
 
 require 'test_helper'
