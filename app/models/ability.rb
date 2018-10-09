@@ -30,16 +30,27 @@ class Ability
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
   # end
 
-  def initialize(user)
+  #def initialize(user)
     # Define abilities for the passed in user here. For example:
+    #can :read, :all . # permissions for every user, even if not logged in
+    #user ||= User.new # guest user (not logged in)
+    #if user.superadmin_role?
+    #  can :manage, :all
+    #end
+    #if user.admin_role?
+    #  can :manage, User
+    #end
 
+
+  #end
+  def initialize(user)
     user ||= User.new # guest user (not logged in)
-    if user.superadmin_role?
-      can :manage, :all
+    #can :read, :all . # permissions for every user, even if not logged in
+    if user.present?  # additional permissions for logged in users (they can manage their posts)
+      #can :manage, Post, user_id: user.id
+      if user.superadmin_role?  # additional permissions for administrators
+        can :manage, :all
+      end
     end
-    if user.admin_role?
-      can :manage, User
-    end
-
   end
 end

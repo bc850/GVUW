@@ -26,14 +26,8 @@ Rails.application.routes.draw do
     resources :organizations
   end
 
-  namespace :users do
-    get '/account' => 'accounts#edit', as: :account
-    put '/info' => 'accounts#update_info', as: :info
-    put '/change_password' => 'accounts#change_password', as: :change_password
-    resources :news do
-      put 'publish' => 'news#publish', on: :member
-      put 'unpublish' => 'news#unpublish', on: :member
-    end
+  namespace :dashboards do
+    resources :landings
   end
 
   scope module: 'home' do

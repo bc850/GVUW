@@ -85,6 +85,23 @@
             </div>
           </li>
         <% end %>
+        <% if user_signed_in? %>
+          <li class="nav-item dropdown">
+            <a class="<%= 'active' if current_page?(authors_news_index_path) || current_page?(authors_account_path) %> nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <% if current_user.name != nil %>
+                <%= current_user.display_name %>
+              <% else %>
+                Account
+              <% end %>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <%= link_to 'Administration', dashboards_landings_path, class: "dropdown-item #{yield(:leadership_board_active)}" %>
+              <div class="dropdown-divider"></div>
+
+              <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "dropdown-item " %>
+            </div>
+          </li>
+        <% end %>
         <li class="nav-item ml-3">
           <%= button_to 'Donate', root_path, class: "nav-link #{yield(:donate_active)} btn" %>
         </li>
