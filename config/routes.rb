@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   devise_for :authors
   namespace :authors do
     get '/account' => 'accounts#edit', as: :account
@@ -23,6 +24,10 @@ Rails.application.routes.draw do
       put 'unpublish' => 'partners#unpublish', on: :member
     end
     resources :organizations
+  end
+
+  namespace :dashboards do
+    resources :landings
   end
 
   scope module: 'home' do
