@@ -8,8 +8,8 @@
 
 Author.delete_all
 Author.create!(
-  :name => 'Brandon Corbett',
-  :email => 'brandon.corbett@sgatechnology.com',
+  :name => 'Test Account',
+  :email => 'test@test.com',
   :password => 'changeme',
   :password_confirmation => 'changeme'
 )
